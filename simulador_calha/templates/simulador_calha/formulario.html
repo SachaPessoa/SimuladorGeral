@@ -1,0 +1,66 @@
+﻿{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}{% translate "Simulador de Escoamento por Gravidade" %}<link rel="stylesheet" href="{% static 'simulador_calha/css/calha.css' %}?v=1">
+{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <div><span class="eyebrow">{% translate "Avaliação de Escoamento Livre" %}</span><h1>{% translate "Simulador de Escoamento por Gravidade" %}</h1><p>{% translate "Simulação do escoamento por gravidade em condutos livres, avaliando diferentes geometrias de seção e condições hidráulicas." %}</p></div>
+  <div class="page-actions"><a class="button-link secondary" href="?reset=padrao">{% translate "Restaurar padrão" %}</a><button type="submit" form="simulation-form">{% translate "Executar simulação" %}</button></div>
+</section>
+<form method="post" action="{% url 'simulador_calha:home' %}" class="simulation-form calha-form" id="simulation-form">{% csrf_token %}
+  <section class="form-section">
+    <div class="section-title"><span class="section-number">01</span><h2>{% translate "Operação" %}</h2><p>{% translate "Condições hidráulicas impostas à descida." %}</p></div>
+    <div class="field-grid compact-grid">
+      {% for field in form %}{% if field.name == "Qreq_m3h" or field.name == "S_percent" %}
+        <label class="field"><span>{{ field.label }}</span>{{ field }}<small class="help-text">{{ field.help_text }}</small>{% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}</label>
+      {% endif %}{% endfor %}
+      <label class="field combo-field"><span>{{ form.rugosidade_mm.label }}</span><div class="combo-inputs">{{ form.rugosidade_mm }}{{ form.rugosidade_unidade }}</div><small class="help-text">{{ form.rugosidade_mm.help_text }}</small>{% if form.rugosidade_mm.errors %}<small class="error">{{ form.rugosidade_mm.errors|striptags }}</small>{% endif %}</label>
+    </div>
+  </section>
+  <section class="form-section">
+    <div class="section-title"><span class="section-number">02</span><h2>{% translate "Polpa e partículas" %}</h2><p>{% translate "Propriedades das fases, concentração e granulometria de referência." %}</p></div>
+    <div class="field-grid calha-slurry-grid">{% for field in form %}{% if field.name == "rhos" or field.name == "rhol" or field.name == "mu_l_cP" or field.name == "phiw_percent" or field.name == "d85_mm" or field.name == "dp_mm" %}
+      <label class="field"><span>{{ field.label }}</span>{{ field }}<small class="help-text">{{ field.help_text }}</small>{% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}</label>
+    {% endif %}{% endfor %}</div>
+  </section>
+  <section class="form-section">
+    <div class="section-title"><span class="section-number">03</span><h2>{% translate "Reologia" %}</h2><p>{% translate "Informe constantes laboratoriais ou parâmetros reológicos diretos." %}</p>
+      <div class="equation-panel"><div class="equation"><span class="eq-left">τ<sub>0</sub></span><span class="eq-op">=</span><span class="eq-right">A · φ<sub>V</sub><sup>B</sup></span></div><div class="equation"><span class="eq-left">η</span><span class="eq-op">=</span><span class="eq-right">10<sup class="eq-exponent">[(φ<sub>V</sub>/(1 − φ<sub>V</sub>)) · B']</sup> · μ<sub>l</sub></span></div></div>
+    </div>
+    <div class="field-grid compact-grid">
+      <label class="field wide-field"><span>{{ form.entrada_reologia.label }}</span>{{ form.entrada_reologia }}<small class="help-text">{{ form.entrada_reologia.help_text }}</small></label>
+      <div class="reologia-fields wide-field" data-reologia-group="constantes">{% for field in form %}{% if field.name == "A_lab" or field.name == "B_lab" or field.name == "B_linha_lab" %}<label class="field"><span>{{ field.label }}</span>{{ field }}<small class="help-text">{{ field.help_text }}</small>{% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}</label>{% endif %}{% endfor %}</div>
+      <div class="reologia-fields wide-field" data-reologia-group="direta">
+        <label class="field combo-field"><span>{{ form.tau0_direto.label }}</span><div class="combo-inputs">{{ form.tau0_direto }}{{ form.tau0_unidade }}</div><small class="help-text">{{ form.tau0_direto.help_text }}</small>{% if form.tau0_direto.errors %}<small class="error">{{ form.tau0_direto.errors|striptags }}</small>{% endif %}</label>
+        <label class="field combo-field"><span>{{ form.eta_direta.label }}</span><div class="combo-inputs">{{ form.eta_direta }}{{ form.eta_unidade }}</div><small class="help-text">{{ form.eta_direta.help_text }}</small>{% if form.eta_direta.errors %}<small class="error">{{ form.eta_direta.errors|striptags }}</small>{% endif %}</label>
+        <div class="geometry-rule"><strong>{% translate "Conversão interna" %}</strong><span>{% translate "A entrada direta é convertida para A, B e B' equivalentes antes do cálculo. O motor permanece inalterado." %}</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="form-section">
+    <div class="section-title"><span class="section-number">04</span><h2>{% translate "Geometria" %}</h2><p>{% translate "Definição da seção transversal e unidades de entrada." %}</p></div>
+    <div class="field-grid geometry-grid">
+      <label class="field wide-field"><span>{{ form.geometria.label }}</span>{{ form.geometria }}<small class="help-text">{{ form.geometria.help_text }}</small></label>
+      <div class="geometry-fields wide-field" data-geometry="retangular">
+        <label class="field combo-field"><span>{{ form.b.label }}</span><div class="combo-inputs">{{ form.b }}{{ form.b_unidade }}</div><small class="help-text">{% translate "Obrigatoriamente maior que zero." %}</small>{% if form.b.errors %}<small class="error">{{ form.b.errors|striptags }}</small>{% endif %}</label>
+        <label class="field combo-field"><span>{{ form.hmax.label }}</span><div class="combo-inputs">{{ form.hmax }}{{ form.hmax_unidade }}</div><small class="help-text">{{ form.hmax.help_text }}</small>{% if form.hmax.errors %}<small class="error">{{ form.hmax.errors|striptags }}</small>{% endif %}</label>
+        <div class="geometry-rule"><strong>m = 0</strong><span>{% translate "Taludes verticais definidos automaticamente." %}</span></div>
+      </div>
+      <div class="geometry-fields wide-field" data-geometry="trapezoidal">
+        <label class="field combo-field"><span>{{ form.b.label }}</span><div class="combo-inputs">{{ form.b }}{{ form.b_unidade }}</div><small class="help-text">{% translate "Obrigatoriamente maior que zero." %}</small>{% if form.b.errors %}<small class="error">{{ form.b.errors|striptags }}</small>{% endif %}</label>
+        <label class="field combo-field"><span>{{ form.hmax.label }}</span><div class="combo-inputs">{{ form.hmax }}{{ form.hmax_unidade }}</div><small class="help-text">{{ form.hmax.help_text }}</small>{% if form.hmax.errors %}<small class="error">{{ form.hmax.errors|striptags }}</small>{% endif %}</label>
+        <label class="field"><span>{{ form.m.label }}</span>{{ form.m }}<small class="help-text">{% translate "Obrigatoriamente maior que zero." %}</small>{% if form.m.errors %}<small class="error">{{ form.m.errors|striptags }}</small>{% endif %}</label>
+      </div>
+      <div class="geometry-fields wide-field" data-geometry="triangular">
+        <label class="field"><span>{{ form.m.label }}</span>{{ form.m }}<small class="help-text">{% translate "Obrigatoriamente maior que zero." %}</small>{% if form.m.errors %}<small class="error">{{ form.m.errors|striptags }}</small>{% endif %}</label>
+        <label class="field combo-field"><span>{{ form.hmax.label }}</span><div class="combo-inputs">{{ form.hmax }}{{ form.hmax_unidade }}</div><small class="help-text">{{ form.hmax.help_text }}</small>{% if form.hmax.errors %}<small class="error">{{ form.hmax.errors|striptags }}</small>{% endif %}</label>
+        <div class="geometry-rule"><strong>b = 0</strong><span>{% translate "Base inferior definida automaticamente como vértice." %}</span></div>
+      </div>
+      <div class="geometry-fields wide-field" data-geometry="tubo"><label class="field combo-field"><span>{{ form.D.label }}</span><div class="combo-inputs">{{ form.D }}{{ form.D_unidade }}</div><small class="help-text">{{ form.D.help_text }}</small>{% if form.D.errors %}<small class="error">{{ form.D.errors|striptags }}</small>{% endif %}</label></div>
+    </div>
+  </section>
+  <div class="form-actions"><button type="submit">{% translate "Executar simulação" %}</button></div>
+</form>
+<script src="{% static 'simulador_calha/js/formulario.js' %}?v=1"></script>
+<link rel="stylesheet" href="{% static 'simulador_calha/css/calha.css' %}?v=1">
+{% endblock %}

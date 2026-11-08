@@ -1,0 +1,97 @@
+﻿{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}{% translate "Simulador de Deposição" %}{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <div>
+    <span class="eyebrow">{% translate "Diagnóstico de deposição" %}</span>
+    <h1>{% translate "Simulador de Deposição" %}</h1>
+    <p>{% translate "Avaliação da velocidade mínima de suspensão e deposição de sólidos em escoamentos de polpas em tubulações pressurizadas." %}</p>
+  </div>
+  <div class="page-actions">
+    <a class="button-link secondary" href="?reset=padrao">{% translate "Restaurar padrão" %}</a>
+    <button type="submit" form="vscalc-form">{% translate "Calcular deposição" %}</button>
+  </div>
+</section>
+
+<form method="post" class="simulation-form" id="vscalc-form">
+  {% csrf_token %}
+
+  <section class="form-section">
+    <div class="section-title">
+      <span class="section-number">01</span>
+      <h2>{% translate "Operação e tubulação" %}</h2>
+      <p>{% translate "Geometria, rugosidade e velocidade média usada no diagnóstico da subcamada." %}</p>
+    </div>
+    <div class="field-grid operation-grid">
+      <label class="field combo-field"><span>{{ form.diametro_entrada.label }}</span><div class="combo-inputs">{{ form.diametro_entrada }}{{ form.diametro_unidade }}</div>{% if form.diametro_entrada.help_text %}<small class="help-text">{{ form.diametro_entrada.help_text }}</small>{% endif %}{% if form.diametro_entrada.errors %}<small class="error">{{ form.diametro_entrada.errors|striptags }}</small>{% endif %}</label>
+      <label class="field combo-field"><span>{{ form.rugosidade_absoluta.label }}</span><div class="combo-inputs">{{ form.rugosidade_absoluta }}{{ form.rugosidade_unidade }}</div>{% if form.rugosidade_absoluta.help_text %}<small class="help-text">{{ form.rugosidade_absoluta.help_text }}</small>{% endif %}{% if form.rugosidade_absoluta.errors %}<small class="error">{{ form.rugosidade_absoluta.errors|striptags }}</small>{% endif %}</label>
+      <label class="field"><span>{{ form.velocidade.label }}</span>{{ form.velocidade }}{% if form.velocidade.help_text %}<small class="help-text">{{ form.velocidade.help_text }}</small>{% endif %}{% if form.velocidade.errors %}<small class="error">{{ form.velocidade.errors|striptags }}</small>{% endif %}</label>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="section-title">
+      <span class="section-number">02</span>
+      <h2>{% translate "Polpa e granulometria" %}</h2>
+      <p>{% translate "Propriedades das fases, concentração e diâmetro equivalente de deposição." %}</p>
+      <p class="section-note">{% translate "PSD: use D50 quando D80/D20 < 2,0. Para D80/D20 > 2,5, avalie D80, D85 ou Top Size. Na transição, escolha tecnicamente o diâmetro equivalente." %}</p>
+    </div>
+    <div class="field-grid compact-grid">
+      {% for field in form %}
+        {% if field.name == "tipo_concentracao" or field.name == "phi_total" or field.name == "rho_s" or field.name == "rho_l" or field.name == "mu_l_cp" or field.name == "proporcoes_percent" or field.name == "diametros_um" or field.name == "vscalc_d_mm" %}
+          <label class="field{% if field.name == 'proporcoes_percent' or field.name == 'diametros_um' %} wide-field{% endif %}">
+            <span class="field-label">{{ field.label }}</span>
+            {{ field }}
+            {% if field.help_text %}<small class="help-text">{{ field.help_text }}</small>{% endif %}
+            {% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}
+          </label>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="section-title">
+      <span class="section-number">03</span>
+      <h2>{% translate "Critérios de deposição" %}</h2>
+      <p>{% translate "Seleção do critério Thomas, velocidade terminal, inclinação e parâmetros de leito." %}</p>
+    </div>
+    <div class="field-grid compact-grid">
+      {% for field in form %}
+        {% if field.name == "vscalc_theta_deg" or field.name == "vscalc_cvb" or field.name == "vscalc_mus" or field.name == "vscalc_yplus" or field.name == "vscalc_drag" or field.name == "vscalc_fine" %}
+          <label class="field">
+            <span class="field-label">{{ field.label }}</span>
+            {{ field }}
+            {% if field.help_text %}<small class="help-text">{{ field.help_text }}</small>{% endif %}
+            {% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}
+          </label>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="section-title">
+      <span class="section-number">04</span>
+      <h2>{% translate "Faixa dos gráficos" %}</h2>
+      <p>{% translate "Limites opcionais para os gráficos paramétricos. Se vazios, usam 50% e 200% da condição operacional." %}</p>
+    </div>
+    <div class="field-grid compact-grid">
+      {% for field in form %}
+        {% if field.name == "vscalc_dmin_um" or field.name == "vscalc_dmax_um" or field.name == "vscalc_vmin" or field.name == "vscalc_vmax" %}
+          <label class="field">
+            <span class="field-label">{{ field.label }}</span>
+            {{ field }}
+            {% if field.help_text %}<small class="help-text">{{ field.help_text }}</small>{% endif %}
+            {% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}
+          </label>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="form-actions"><button type="submit">{% translate "Calcular deposição" %}</button></div>
+</form>
+<script src="{% static 'js/formulario.js' %}?v=6"></script>
+{% endblock %}

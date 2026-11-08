@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}{% translate "Resultado" %}<link rel="stylesheet" href="{% static 'simulador_calha/css/calha.css' %}?v=1">
+{% endblock %}
+{% block content %}
+<section class="toolbar">
+  <div><span class="eyebrow">{% translate "Análise concluída" %}</span><h1>{% translate "Resultado da simulação" %}</h1><p>{{ resumo.geometria }} · {{ resumo.superficie_rotulo }}</p></div>
+  <a class="button-link" href="{% url 'simulador_calha:home' %}">{% translate "Nova simulação" %}</a>
+</section>
+
+<section class="result-summary">
+  <div class="metric primary"><span>{% translate "Vazão" %}</span><strong>{{ resumo.vazao|floatformat:2 }}</strong><small>m³/h</small></div>
+  <div class="metric"><span>{% translate "Velocidade média" %}</span><strong>{{ resumo.velocidade|floatformat:2 }}</strong><small>m/s</small></div>
+  <div class="metric"><span>{% translate "Altura de fluxo" %}</span><strong>{{ resumo.altura|floatformat:3 }}</strong><small>m</small></div>
+  <div class="metric"><span>{% translate "Preenchimento" %}</span><strong>{{ resumo.preenchimento|floatformat:1 }}</strong><small>%</small></div>
+  <div class="metric"><span>Froude</span><strong>{{ resumo.froude|floatformat:2 }}</strong><small>-</small></div>
+  <div class="metric"><span>{% translate "Margem U/Ut" %}</span><strong>{{ resumo.margem_deposicao|floatformat:2 }}</strong><small>{% translate "suspensão" %}</small></div>
+</section>
+
+{% if avisos %}<div class="messages result-messages">{% for aviso in avisos %}<div class="message warning"><strong>{% translate "Atenção" %}</strong><span>{{ aviso }}</span></div>{% endfor %}</div>{% endif %}
+
+<div class="content-heading"><span class="eyebrow">{% translate "Visualização técnica" %}</span><h2>{% translate "Gráficos da simulação" %}</h2><p>{% translate "Explore as curvas calculadas e o comportamento hidráulico do sistema nas condições operacionais simuladas." %}</p></div>
+<section class="charts" id="interactive-charts">
+  <div class="chart" id="chart-hq"></div>
+  <div class="chart chart-square" id="chart-secao"></div>
+  <div class="chart" id="chart-velocidade"></div>
+  <div class="chart" id="chart-froude"></div>
+  <div class="chart" id="chart-atrito"></div>
+  <div class="chart" id="chart-reynolds"></div>
+</section>
+
+<section class="table-panel">
+  <div class="panel-heading"><div><span class="eyebrow">{% translate "Memória de cálculo" %}</span><h2>{% translate "Tabela de resultados" %}</h2><p>{% translate "Resultados completos compilados para o cenário analisado." %}</p></div></div>
+  <div class="table-scroll"><table><thead><tr><th>{% translate "Símbolo" %}</th><th>{% translate "Descrição" %}</th><th>{% translate "Valor" %}</th><th>{% translate "Unidade" %}</th></tr></thead><tbody>
+    {% for linha in tabela_resultados %}<tr><td class="symbol">{{ linha.simbolo|safe }}</td><td>{% translate linha.descricao %}</td><td>{{ linha.valor_formatado }}</td><td class="unit">{{ linha.unidade }}</td></tr>{% endfor %}
+  </tbody></table></div>
+</section>
+
+<section class="export-panel">
+  <div class="export-header"><div><span class="eyebrow">{% translate "Exportação" %}</span><h2>{% translate "Dados dos gráficos" %}</h2><p>{% translate "Selecione uma série para copiar os dados tabulados." %}</p></div>
+  <div class="export-controls"><select id="export-chart-select"></select><button type="button" id="copy-chart-data">{% translate "Copiar para Excel" %}</button></div></div>
+  <p class="export-status" id="export-chart-status">{% translate "Os dados selecionados serão copiados diretamente para a área de transferência." %}</p>
+</section>
+{{ graficos|json_script:"graficos-data" }}
+<script src="{% url 'javascript-catalog' %}"></script>
+<script src="{% static 'simulador_calha/js/graficos.js' %}?v=2"></script>
+<link rel="stylesheet" href="{% static 'simulador_calha/css/calha.css' %}?v=1">
+{% endblock %}

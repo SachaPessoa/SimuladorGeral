@@ -1,0 +1,456 @@
+# English translations for Slurry.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the Slurry project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Slurry Simulator\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-07-12 20:49-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+msgid "4CM"
+msgstr "4CM"
+
+msgid "4CM - Curva J"
+msgstr "4MC - J Curve"
+
+msgid "4CM carrier"
+msgstr "4MC carrier"
+
+msgid "4CM estratificado"
+msgstr "4MC stratified"
+
+msgid "4CM heterogêneo"
+msgstr "4CM heterogeneous"
+
+msgid "4CM pseudo-homogêneo"
+msgstr "4CM pseudo-homogeneous"
+
+msgid "Altura [m]"
+msgstr "Height [m]"
+
+msgid "Arraste"
+msgstr "Drag"
+
+msgid "Arraste [m/km]"
+msgstr "Drag [m/km]"
+
+msgid "C/Ca por classe granulométrica"
+msgstr "C/Ca by particle-size class"
+
+msgid "Capacidade hidráulica"
+msgstr "Hydraulic capacity"
+
+msgid "Carrier"
+msgstr "Carrier"
+
+msgid "Condição operacional"
+msgstr "Operating condition"
+
+msgid "Copiado"
+msgstr "Copied"
+
+msgid "Copiar para Excel"
+msgstr "Copy to Excel"
+
+msgid "Curva J - WASP Modificado x 4CM"
+msgstr "J Curve - Modified WASP x 4MC"
+
+msgid "Dados"
+msgstr "Data"
+
+msgid "Depósito"
+msgstr "Deposit"
+
+msgid "Diâmetro [um]"
+msgstr "Diameter [um]"
+
+msgid "Diâmetro [µm]"
+msgstr "Diameter [µm]"
+
+msgid "Diâmetro da partícula [µm]"
+msgstr "Particle diameter [µm]"
+
+msgid "Diâmetro operacional"
+msgstr "Operating diameter"
+
+msgid "Diâmetro operacional - Vs"
+msgstr "Operating diameter - Vs"
+
+msgid "Diâmetro operacional - Vsm"
+msgstr "Operating diameter - Vsm"
+
+msgid "Entrada"
+msgstr "Input"
+
+msgid "Erro ao copiar"
+msgstr "Failed to copy"
+
+msgid "Estratificado"
+msgstr "Stratified"
+
+msgid "Fator de atrito"
+msgstr "Friction Factor"
+
+msgid "Fator de atrito [-]"
+msgstr "Friction factor [-]"
+
+msgid "Fator de atrito homogêneo"
+msgstr "Homogeneous friction factor"
+
+msgid "Fr liso"
+msgstr "Smooth Fr"
+
+msgid "Fr rugoso"
+msgstr "Rough Fr"
+
+msgid "Granulometria acumulada passante (entrada)"
+msgstr "Cumulative passing particle-size distribution (input)"
+
+msgid "Granulometria acumulada passante (modelo)"
+msgstr "Cumulative passing particle-size distribution (model)"
+
+msgid "Heterogêneo"
+msgstr "Heterogeneous"
+
+msgid "Largura [m]"
+msgstr "Width [m]"
+
+msgid "Limite Hom-Het"
+msgstr "Hom-Het limit"
+
+msgid "Não foi possível copiar os dados."
+msgstr "The data could not be copied."
+
+msgid "Operação"
+msgstr "Operation"
+
+msgid "Operação - Vs"
+msgstr "Operation - Vs"
+
+msgid "Operação - Vsm"
+msgstr "Operation - Vsm"
+
+msgid "Passante"
+msgstr "Passing"
+
+msgid "Passante [%]"
+msgstr "Passing [%]"
+
+msgid "Perda de carga [m coluna de polpa/km]"
+msgstr "Head Loss [m slurry column/km]"
+
+msgid "Perda de carga [m polpa/km]"
+msgstr "Head loss [m slurry/km]"
+
+msgid "Perda de carga [m/km]"
+msgstr "Head loss [m/km]"
+
+msgid "Perda de carga vs velocidade"
+msgstr "Head loss vs velocity"
+
+msgid "Perfil"
+msgstr "Profile"
+
+msgid "Perfil vertical de concentração"
+msgstr "Vertical concentration profile"
+
+msgid "Ponto de operação"
+msgstr "Operating point"
+
+msgid "Preenchimento"
+msgstr "Filling"
+
+msgid "Pseudo-homogêneo"
+msgstr "Pseudo-homogeneous"
+
+msgid "Q lisa [m³/h]"
+msgstr "Smooth Q [m³/h]"
+
+msgid "Q rugosa [m³/h]"
+msgstr "Rough Q [m³/h]"
+
+msgid "Re liso"
+msgstr "Smooth Re"
+
+msgid "Re rugoso"
+msgstr "Rough Re"
+
+msgid "Rec liso"
+msgstr "Smooth Rec"
+
+msgid "Rec rugoso"
+msgstr "Rough Rec"
+
+msgid "Reynolds [-]"
+msgstr "Reynolds [-]"
+
+msgid "Saturação"
+msgstr "Saturation"
+
+msgid "Seção da tubulação"
+msgstr "Pipe section"
+
+msgid "Seção transversal - modelo de duas camadas"
+msgstr "Cross-section - two-layer model"
+
+msgid "Simulador de Deposição - variação da velocidade"
+msgstr "Deposition Simulator - velocity variation"
+
+msgid "Simulador de Deposição - variação do diâmetro"
+msgstr "Deposition Simulator - diameter variation"
+
+msgid "Sólidos suspensos"
+msgstr "Suspended solids"
+
+msgid "Sólidos suspensos vs velocidade"
+msgstr "Suspended solids vs velocity"
+
+msgid "Temperatura [K]"
+msgstr "Temperature [K]"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Trajetória"
+msgstr "Trajectory"
+
+msgid "Transição L-T"
+msgstr "L-T transition"
+
+msgid "Transição laminar/turbulento"
+msgstr "Laminar/turbulent transition"
+
+msgid "U lisa [m/s]"
+msgstr "Smooth U [m/s]"
+
+msgid "U rugosa [m/s]"
+msgstr "Rough U [m/s]"
+
+msgid "V operacional"
+msgstr "Operating V"
+
+msgid "Velocidade [m/s]"
+msgstr "Velocity [m/s]"
+
+msgid "Velocidade de deposição [m/s]"
+msgstr "Deposition Velocity [m/s]"
+
+msgid "Velocidade média [m/s]"
+msgstr "Mean velocity [m/s]"
+
+msgid "Velocidade média da polpa [m/s]"
+msgstr "Mean Slurry Velocity [m/s]"
+
+msgid "Velocidades e deposição"
+msgstr "Velocities and deposition"
+
+msgid "WASP Modificado"
+msgstr "Modified WASP"
+
+msgid "camada inferior"
+msgstr "lower layer"
+
+msgid "camada superior"
+msgstr "upper layer"
+
+msgid "copiado. Cole diretamente no Excel."
+msgstr "copied. Paste directly into Excel."
+
+msgid "copiados. Cole diretamente no Excel."
+msgstr "copied. Paste directly into Excel."
+
+msgid "depósito"
+msgstr "Deposit"
+
+msgid "fD liso"
+msgstr "Smooth fD"
+
+msgid "fD rugoso"
+msgstr "Rough fD"
+
+msgid "h [kJ/kg]"
+msgstr "h [kJ/kg]"
+
+msgid "interface"
+msgstr "interface"
+
+msgid "m coluna de polpa/km"
+msgstr "m slurry head/km"
+
+msgid "operação por velocidade"
+msgstr "operation by velocity"
+
+msgid "s [kJ/(kg.K)]"
+msgstr "s [kJ/(kg.K)]"
+
+msgid "seção da tubulação"
+msgstr "Pipe section"
+
+msgid "y/D depósito"
+msgstr "deposit y/D"
+
+msgid "Água"
+msgstr "Water"
+
+msgid "Água [m/km]"
+msgstr "Water [m/km]"
+
+msgid "φ total"
+msgstr "total φ"
+
+msgid "Base mássica"
+msgstr "Mass basis"
+
+msgid "Pressão [bar(a)]"
+msgstr "Pressure [bar(a)]"
+
+msgid "Valores calculados"
+msgstr "Calculated values"
+
+msgid "Fator de atrito homogêneo - Bingham"
+msgstr "Homogeneous friction factor - Bingham"
+
+msgid "Fator de atrito homogêneo - Power Law"
+msgstr "Homogeneous friction factor - Power Law"
+
+msgid "Fator de atrito homogêneo - Herschel-Bulkley"
+msgstr "Homogeneous friction factor - Herschel-Bulkley"
+
+msgid "Transição Bingham 1"
+msgstr "Bingham transition 1"
+
+msgid "Transição Bingham 2"
+msgstr "Bingham transition 2"
+
+msgid "Transição Power Law"
+msgstr "Power Law transition"
+
+msgid "Transição Herschel-Bulkley (ReG=3000)"
+msgstr "Herschel-Bulkley transition (ReG=3000)"
+
+msgid "Newtoniano (água)"
+msgstr "Newtonian (water)"
+
+msgid "Altura de fluxo [m]"
+msgstr "Flow depth [m]"
+
+msgid "Capacidade hidráulica: altura vs vazão"
+msgstr "Hydraulic capacity: depth vs flow rate"
+
+msgid "Contorno da seção"
+msgstr "Section boundary"
+
+msgid "Fator de atrito de Darcy vs altura"
+msgstr "Darcy friction factor vs depth"
+
+msgid "Fr = 1"
+msgstr "Fr = 1"
+
+msgid "Froude - superfície lisa"
+msgstr "Froude - smooth surface"
+
+msgid "Froude - superfície rugosa"
+msgstr "Froude - rough surface"
+
+msgid "Froude [-]"
+msgstr "Froude [-]"
+
+msgid "Lâmina de polpa"
+msgstr "Slurry flow area"
+
+msgid "Número de Froude vs altura"
+msgstr "Froude number vs depth"
+
+msgid "Q requerida"
+msgstr "Required Q"
+
+msgid "Re - superfície lisa"
+msgstr "Re - smooth surface"
+
+msgid "Re - superfície rugosa"
+msgstr "Re - rough surface"
+
+msgid "Rec - referência lisa"
+msgstr "Rec - smooth reference"
+
+msgid "Rec - referência rugosa"
+msgstr "Rec - rough reference"
+
+msgid "Reynolds e transição vs altura"
+msgstr "Reynolds and transition vs depth"
+
+msgid "Seção preenchida"
+msgstr "Filled section"
+
+msgid "Superfície lisa"
+msgstr "Smooth surface"
+
+msgid "Superfície rugosa"
+msgstr "Rough surface"
+
+msgid "U - superfície lisa"
+msgstr "U - smooth surface"
+
+msgid "U - superfície rugosa"
+msgstr "U - rough surface"
+
+msgid "Ut1 - Abulnaga"
+msgstr "Ut1 - Abulnaga"
+
+msgid "Ut2 - Green/Abulnaga"
+msgstr "Ut2 - Green/Abulnaga"
+
+msgid "Vazão [m³/h]"
+msgstr "Flow rate [m³/h]"
+
+msgid "Velocidade e limites de deposição"
+msgstr "Velocity and deposition limits"
+
+msgid "fD - superfície lisa"
+msgstr "fD - smooth surface"
+
+msgid "fD - superfície rugosa"
+msgstr "fD - rough surface"
+
+msgid "fD [-]"
+msgstr "fD [-]"
+
+msgid "Vazão volumétrica e velocidade"
+msgstr "Volumetric flow rate and velocity"
+
+msgid "Vazão volumétrica [m³/h]"
+msgstr "Volumetric flow rate [m³/h]"
+
+msgid "Densidade e número de Mach"
+msgstr "Density and Mach number"
+
+msgid "Densidade [kg/m³]"
+msgstr "Density [kg/m³]"
+
+msgid "Número de Mach [-]"
+msgstr "Mach number [-]"
+
+msgid "Fator de atrito de Darcy e velocidade do som"
+msgstr "Darcy friction factor and speed of sound"
+
+msgid "Fator Darcy [-]"
+msgstr "Darcy friction factor [-]"
+
+msgid "Velocidade do som [m/s]"
+msgstr "Speed of sound [m/s]"
+
+msgid "Velocidade do som"
+msgstr "Speed of sound"
+

@@ -1,0 +1,293 @@
+﻿{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}{% translate "Simulador de Polpa" %}{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <div>
+    <span class="eyebrow">{% translate "Avaliação da Polpa" %}</span>
+    <h1>{% translate "Simulador de Polpa" %}</h1>
+    <p>{% translate "Simulação do escoamento de polpas em tubulações pressurizadas (condutos forçados), incluindo avaliação hidráulica e comportamento do escoamento." %}</p>
+  </div>
+  <div class="page-actions">
+    <a class="button-link secondary" href="?reset=padrao">{% translate "Restaurar padrão" %}</a>
+    <button type="submit" form="simulation-form">{% translate "Executar simulação" %}</button>
+  </div>
+</section>
+
+<form method="post" class="simulation-form" id="simulation-form">
+  {% csrf_token %}
+
+  <section class="form-section">
+    <div class="section-title">
+      <span class="section-number">01</span>
+      <h2>{% translate "Operação e tubulação" %}</h2>
+      <p>{% translate "Geometria e condição operacional do sistema." %}</p>
+    </div>
+    <div class="field-grid operation-grid">
+      <label class="field combo-field">
+        <span>{{ form.diametro_entrada.label }}</span>
+        <div class="combo-inputs">
+          {{ form.diametro_entrada }}
+          {{ form.diametro_unidade }}
+        </div>
+        {% if form.diametro_entrada.help_text %}<small class="help-text">{{ form.diametro_entrada.help_text }}</small>{% endif %}
+        {% if form.diametro_entrada.errors %}<small class="error">{{ form.diametro_entrada.errors|striptags }}</small>{% endif %}
+        {% if form.diametro_unidade.errors %}<small class="error">{{ form.diametro_unidade.errors|striptags }}</small>{% endif %}
+      </label>
+      <label class="field combo-field">
+        <span>{{ form.rugosidade_absoluta.label }}</span>
+        <div class="combo-inputs">
+          {{ form.rugosidade_absoluta }}
+          {{ form.rugosidade_unidade }}
+        </div>
+        {% if form.rugosidade_absoluta.help_text %}<small class="help-text">{{ form.rugosidade_absoluta.help_text }}</small>{% endif %}
+        {% if form.rugosidade_absoluta.errors %}<small class="error">{{ form.rugosidade_absoluta.errors|striptags }}</small>{% endif %}
+        {% if form.rugosidade_unidade.errors %}<small class="error">{{ form.rugosidade_unidade.errors|striptags }}</small>{% endif %}
+      </label>
+      <label class="field">
+        <span>{{ form.velocidade.label }}</span>
+        {{ form.velocidade }}
+        {% if form.velocidade.help_text %}<small class="help-text">{{ form.velocidade.help_text }}</small>{% endif %}
+        {% if form.velocidade.errors %}<small class="error">{{ form.velocidade.errors|striptags }}</small>{% endif %}
+      </label>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="section-title">
+      <span class="section-number">02</span>
+      <h2>{% translate "Polpa e granulometria" %}</h2>
+      <p>{% translate "Propriedades das fases e distribuição dos sólidos." %}</p>
+    </div>
+    <div class="field-grid slurry-grid">
+      <label class="field slurry-primary concentration-type-field">
+        <span class="field-label">{{ form.tipo_concentracao.label }}</span>
+        {{ form.tipo_concentracao }}
+        {% if form.tipo_concentracao.help_text %}<small class="help-text">{{ form.tipo_concentracao.help_text }}</small>{% endif %}
+        {% if form.tipo_concentracao.errors %}<small class="error">{{ form.tipo_concentracao.errors|striptags }}</small>{% endif %}
+      </label>
+      <label class="field slurry-primary" id="concentration-value-field"
+        data-label-cv="{% translate 'Concentração volumétrica' %}"
+        data-label-cw="{% translate 'Concentração mássica' %}"
+        data-symbol-cv="φ<sub>V</sub>"
+        data-symbol-cw="φ<sub>w</sub>"
+        data-help-cv="{% translate 'Informe a concentração volumétrica como fração decimal, não em %. Exemplo: 0,30 para 30%.' %}"
+        data-help-cw="{% translate 'Informe a concentração mássica como fração decimal, não em %. Exemplo: 0,65 para 65%.' %}">
+        <span class="field-label concentration-field-label">
+          <span class="concentration-label-inline">
+            <span class="math-symbol" data-concentration-symbol>φ<sub>V</sub></span>
+            <span class="label-separator">-</span>
+            <span class="concentration-label-text" data-concentration-label>{% translate "Concentração volumétrica" %}</span>
+          </span>
+        </span>
+        {{ form.phi_total }}
+        <small class="help-text" data-concentration-help>{{ form.phi_total.help_text }}</small>
+        {% if form.phi_total.errors %}<small class="error">{{ form.phi_total.errors|striptags }}</small>{% endif %}
+      </label>
+      {% for field in form %}
+        {% if field.name == "rho_s" or field.name == "rho_l" or field.name == "mu_l_cp" %}
+          <label class="field slurry-primary slurry-{{ field.name }}">
+            <span class="field-label">{{ field.label }}</span>
+            {{ field }}
+            {% if field.help_text %}<small class="help-text">{{ field.help_text }}</small>{% endif %}
+            {% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}
+          </label>
+        {% endif %}
+      {% endfor %}
+      {% for field in form %}
+        {% if field.name == "proporcoes_percent" or field.name == "diametros_um" %}
+          <label class="field slurry-granulometry">
+            <span class="field-label">{{ field.label }}</span>
+            {{ field }}
+            {% if field.help_text %}<small class="help-text">{{ field.help_text }}</small>{% endif %}
+            {% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}
+          </label>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="section-title">
+      <span class="section-number">03</span>
+      <h2>{% translate "Reologia" %}</h2>
+      <p>{% translate "Parâmetros constitutivos e modelo de escoamento." %}</p>
+      <div class="equation-panel" aria-label="{% translate 'Equações reológicas usadas pelos parâmetros A, B e B linha' %}">
+        <div class="equation">
+          <span class="eq-left">τ<sub>0</sub></span>
+          <span class="eq-op">=</span>
+          <span class="eq-right">A · φ<sup>B</sup></span>
+        </div>
+        <div class="equation">
+          <span class="eq-left">η/K</span>
+          <span class="eq-op">=</span>
+          <span class="eq-right">10<sup class="eq-exponent">[(φ/(1 − φ)) · B']</sup></span>
+        </div>
+        <p>{% translate "φ em fração volumétrica; τ₀ em dyn/cm² e η/K em cP antes dos ajustes do modelo." %}</p>
+        <div class="reologia-reference-note">
+          <strong>{% translate "Referência reológica a 20 °C" %}</strong>
+          <span>{% translate "Informe η ou K considerando água de referência com aproximadamente 1,002 cP. O simulador aplicará o ajuste proporcional à viscosidade do fluido carreador informada." %}</span>
+        </div>
+      </div>
+    </div>
+    <div class="field-grid compact-grid">
+      <label class="field wide-field">
+        <span>{{ form.entrada_reologia.label }}</span>
+        {{ form.entrada_reologia }}
+        {% if form.entrada_reologia.help_text %}<small class="help-text">{{ form.entrada_reologia.help_text }}</small>{% endif %}
+      </label>
+
+      <div class="reologia-fields wide-field" data-reologia-group="laboratorio">
+        {% for field in form %}
+          {% if field.name == "A" or field.name == "B" or field.name == "B_linha" %}
+            <label class="field">
+              <span>{{ field.label }}</span>
+              {{ field }}
+              {% if field.help_text %}<small class="help-text">{{ field.help_text }}</small>{% endif %}
+              {% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}
+            </label>
+          {% endif %}
+        {% endfor %}
+        <div class="rheology-summary">
+          <div class="rheology-summary-heading">
+            <strong>{% translate "Parâmetros reológicos calculados" %}</strong>
+            <small>{% translate "Valores obtidos de A, B e B' para a fração volumétrica informada." %}</small>
+          </div>
+          <div class="rheology-summary-values">
+            <div class="rheology-value">
+              <span>τ<sub>0</sub></span>
+              <strong><output id="lab-tau-pa">-</output> <small class="unit">Pa</small></strong>
+              <small><output id="lab-tau-dyn">-</output> dyn/cm²</small>
+            </div>
+            <div class="rheology-value">
+              <span><span data-coefficient-symbol>η</span> {% translate "referência 20 °C" %}</span>
+              <strong><output id="lab-coef-reference">-</output> <small class="unit">cP</small></strong>
+            </div>
+            <div class="rheology-value emphasized">
+              <span><span data-coefficient-symbol>η</span> {% translate "ajustado pelo fluido" %}</span>
+              <strong><output id="lab-coef-adjusted">-</output> <small class="unit">cP</small></strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reologia-fields wide-field" data-reologia-group="direta">
+        <label class="field combo-field" data-tau0-direto>
+          <span>{{ form.tau0_direto.label }}</span>
+          <div class="combo-inputs">
+            {{ form.tau0_direto }}
+            {{ form.tau0_unidade }}
+          </div>
+          {% if form.tau0_direto.help_text %}<small class="help-text">{{ form.tau0_direto.help_text }}</small>{% endif %}
+          {% if form.tau0_direto.errors %}<small class="error">{{ form.tau0_direto.errors|striptags }}</small>{% endif %}
+        </label>
+        <label class="field combo-field" data-coeficiente-direto="bingham">
+          <span>{{ form.eta_direta.label }}</span>
+          <div class="combo-inputs">
+            {{ form.eta_direta }}
+            {{ form.eta_unidade }}
+          </div>
+          {% if form.eta_direta.help_text %}<small class="help-text">{{ form.eta_direta.help_text }}</small>{% endif %}
+          {% if form.eta_direta.errors %}<small class="error">{{ form.eta_direta.errors|striptags }}</small>{% endif %}
+        </label>
+        <label class="field combo-field" data-coeficiente-direto="nao-bingham">
+          <span>{{ form.k_direto.label }}</span>
+          <div class="combo-inputs">
+            {{ form.k_direto }}
+            {{ form.k_unidade }}
+          </div>
+          {% if form.k_direto.help_text %}<small class="help-text">{{ form.k_direto.help_text }}</small>{% endif %}
+          {% if form.k_direto.errors %}<small class="error">{{ form.k_direto.errors|striptags }}</small>{% endif %}
+        </label>
+        <div class="rheology-summary">
+          <div class="rheology-summary-heading">
+            <strong>{% translate "Parâmetros internos equivalentes" %}</strong>
+            <small>{% translate "Conversão dos parâmetros diretos para os valores utilizados internamente." %}</small>
+          </div>
+          <div class="rheology-summary-values direct-values">
+            <div class="rheology-value">
+              <span>A</span>
+              <strong><output id="equiv-a">-</output></strong>
+            </div>
+            <div class="rheology-value">
+              <span>B</span>
+              <strong><output id="equiv-b">-</output></strong>
+            </div>
+            <div class="rheology-value">
+              <span>B'</span>
+              <strong><output id="equiv-b-linha">-</output></strong>
+            </div>
+            <div class="rheology-value">
+              <span><span data-coefficient-symbol>η</span> {% translate "referência 20 °C" %}</span>
+              <strong><output id="equiv-coef-reference">-</output> <small class="unit">cP</small></strong>
+            </div>
+            <div class="rheology-value emphasized">
+              <span><span data-coefficient-symbol>η</span> {% translate "ajustado pelo fluido" %}</span>
+              <strong><output id="equiv-coef-ajustado">-</output> <small class="unit">cP</small></strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% for field in form %}
+        {% if field.name == "n" or field.name == "modelo_escoamento" or field.name == "tipo_fluido_homogeneo" %}
+          <label class="field">
+            <span class="field-label">{{ field.label }}</span>
+            {{ field }}
+            {% if field.help_text %}<small class="help-text">{{ field.help_text }}</small>{% endif %}
+            {% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}
+          </label>
+        {% endif %}
+      {% endfor %}
+      <div class="concentration-equivalent" id="concentration-equivalent" hidden>
+        <span>φ<sub>V</sub> {% translate "equivalente utilizado no cálculo" %}:</span>
+        <strong><output id="equiv-cv">-</output> <span class="unit">%</span></strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="section-title">
+      <span class="section-number">04</span>
+      <h2>{% translate "Controle numérico e gráficos" %}</h2>
+      <p>{% translate "Faixas de cálculo, convergência e apresentação." %}</p>
+    </div>
+    <div class="field-grid compact-grid">
+      {% for field in form %}
+        {% if field.name == "n_pontos_elev" or field.name == "yD_min" or field.name == "yD_max" or field.name == "erro" or field.name == "max_iter" or field.name == "U_inicial" or field.name == "U_final" or field.name == "U_passo" or field.name == "fator_perda" or field.name == "fourcm_scale" %}
+          <label class="field">
+            <span class="field-label">{{ field.label }}</span>
+            {{ field }}
+            {% if field.help_text %}<small class="help-text">{{ field.help_text }}</small>{% endif %}
+            {% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}
+          </label>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="section-title">
+      <span class="section-number">05</span>
+      <h2>{% translate "Parâmetros complementares — modelo de duas camadas" %}</h2>
+      <p>{% translate "Cálculo comparativo opcional para regime heterogêneo. O WASP Modificado permanece inalterado." %}</p>
+    </div>
+    <div class="field-grid compact-grid">
+      {% for field in form %}
+        {% if field.name == "gillies_cmax" or field.name == "gillies_eta_s" or field.name == "gillies_mu_f_cp" or field.name == "gillies_d12_mode" or field.name == "gillies_d12_manual_um" %}
+          <label class="field">
+            <span class="field-label">{{ field.label }}</span>
+            {{ field }}
+            {% if field.help_text %}<small class="help-text">{{ field.help_text }}</small>{% endif %}
+            {% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}
+          </label>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+  <div class="form-actions">
+    <button type="submit">{% translate "Executar simulação" %}</button>
+  </div>
+</form>
+<script src="{% static 'js/formulario.js' %}?v=6"></script>
+{% endblock %}

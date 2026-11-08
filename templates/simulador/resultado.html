@@ -1,0 +1,292 @@
+﻿{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}{% translate "Resultado" %}{% endblock %}
+{% block content %}
+<section class="toolbar">
+  <div>
+    <span class="eyebrow">{% translate "Análise concluída" %}</span>
+    <h1>{% translate "Resultado da simulação" %}</h1>
+    {% if resultado.tipo_resultado == "vscalc" %}
+      <p><strong>{% translate "Simulador de Deposição" %}</strong> - {% translate "Velocidade de deposição" %}</p>
+    {% else %}
+      <p><strong>{% translate "WASP Modificado" %}</strong> - {% translate "Regime:" %}
+        {% if resultado.resumo.modelo_escoamento == "homogeneo" %}{% translate "homogéneo" %}
+        {% elif resultado.resumo.modelo_escoamento == "heterogeneo" %}{% translate "heterogéneo" %}
+        {% else %}{{ resultado.resumo.modelo_escoamento|default:"modelo" }}{% endif %}
+        - {% translate "Fator de atrito:" %} <strong>Fanning</strong>
+      </p>
+    {% endif %}
+  </div>
+  {% if resultado.tipo_resultado == "vscalc" %}
+    <a class="button-link" href="{% url 'simulador:vscalc' %}">{% translate "Nova simulação" %}</a>
+  {% else %}
+    <a class="button-link" href="{% url 'simulador:formulario' %}">{% translate "Nova simulação" %}</a>
+  {% endif %}
+</section>
+
+<section class="result-summary">
+  {% if resultado.tipo_resultado == "vscalc" %}
+  <div class="metric primary">
+    <span>Vsm</span>
+    <strong>{{ resultado.resumo.vsm|floatformat:2 }}</strong>
+    <small class="unit">m/s</small>
+  </div>
+  <div class="metric">
+    <span>Vs</span>
+    <strong>{{ resultado.resumo.vs|floatformat:2 }}</strong>
+    <small class="unit">m/s</small>
+  </div>
+  <div class="metric">
+    <span>{% translate "Margem sobre Vs" %}</span>
+    <strong>{{ resultado.resumo.margem_vs_percent|floatformat:1 }}</strong>
+    <small>%</small>
+  </div>
+  {% else %}
+  <div class="metric primary">
+    <span>{% translate "Perda de carga" %}</span>
+    <strong>{{ resultado.resumo.perda_carga_operacao|floatformat:2 }}</strong>
+    <small class="unit">m/km</small>
+  </div>
+  {% endif %}
+  {% if resultado.resumo.perda_carga_bar_km and resultado.tipo_resultado != "vscalc" %}
+  <div class="metric">
+    <span>{% translate "Perda de carga" %}</span>
+    <strong>{{ resultado.resumo.perda_carga_bar_km|floatformat:3 }}</strong>
+    <small class="unit">bar/km</small>
+  </div>
+  {% endif %}
+  <div class="metric">
+    <span>{% translate "Velocidade" %}</span>
+    <strong>{{ resultado.resumo.velocidade_operacao|floatformat:2 }}</strong>
+    <small class="unit">m/s</small>
+  </div>
+  {% if resultado.tipo_resultado != "vscalc" %}
+  <div class="metric">
+    <span class="symbol">C/Ca total</span>
+    <strong>{{ resultado.resumo.c0ca_total_percent|floatformat:2 }}</strong>
+    <small>%</small>
+  </div>
+  <div class="metric">
+    <span class="symbol">φ<sub>w</sub></span>
+    <strong>{{ resultado.resumo.phi_w_percent|floatformat:2 }}</strong>
+    <small><span class="unit">%</span> {% translate "mássica" %}</small>
+  </div>
+  <div class="metric">
+    <span class="symbol">φ<sub>V</sub></span>
+    <strong>{{ resultado.resumo.phi_v_percent|floatformat:2 }}</strong>
+    <small><span class="unit">%</span> {% translate "volumétrica total" %}</small>
+  </div>
+  {% if resultado.resumo.modelo_escoamento == "heterogeneo" %}
+    <div class="metric">
+      <span>{% translate "Altura depósito" %}</span>
+      <strong>{{ resultado.resumo.altura_rel_deposito|floatformat:3 }}</strong>
+      <small class="unit">h/D</small>
+    </div>
+  {% else %}
+    <div class="metric">
+      <span>{% translate "Fluido" %}</span>
+      <strong class="fluid-name">
+        {% if resultado.resumo.tipo_fluido_homogeneo == "bingham" %}
+          {% translate "Bingham" %}
+        {% elif resultado.resumo.tipo_fluido_homogeneo == "powerlaw" %}
+          Power Law
+        {% elif resultado.resumo.tipo_fluido_homogeneo == "hb" %}
+          Herschel-Bulkley
+        {% else %}
+          {{ resultado.resumo.tipo_fluido_homogeneo }}
+        {% endif %}
+      </strong>
+      <small>{% translate "homogêneo" %}</small>
+    </div>
+  {% endif %}
+  {% endif %}
+</section>
+
+{% if resultado.avisos and resultado.tipo_resultado != "vscalc" %}
+  <div class="messages result-messages">
+    {% for aviso in resultado.avisos %}
+      <div class="message warning">
+        <strong>{% translate "Atenção" %}</strong>
+        <span>{{ aviso }}</span>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<div class="content-heading">
+  <div>
+    <span class="eyebrow">{% translate "Visualização técnica" %}</span>
+    <h2>{% translate "Gráficos da simulação" %}</h2>
+    <p>{% translate "Explore as curvas, pontos operacionais e comparativos calculados." %}</p>
+  </div>
+</div>
+<section class="charts" id="interactive-charts">
+  <div class="chart" id="chart-vscalc-velocidade"></div>
+  <div class="chart" id="chart-vscalc-diametro"></div>
+  <div class="chart" id="chart-concentracao"></div>
+  <div class="chart" id="chart-perda"></div>
+  <div class="chart" id="chart-c0ca"></div>
+  <div class="chart" id="chart-cv"></div>
+  <div class="chart" id="chart-homogeneo-fator"></div>
+  <div class="chart" id="chart-gran-modelo"></div>
+  <div class="chart" id="chart-gran-entrada"></div>
+</section>
+
+<section class="table-panel">
+  <div class="panel-heading">
+    <div>
+      <span class="eyebrow">{% translate "Memória de cálculo" %}</span>
+      <h2>{% translate "Tabela de resultados" %}</h2>
+      <p>{% translate "Valores detalhados do cenário analisado." %}</p>
+    </div>
+  </div>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>{% translate "Símbolo" %}</th><th>{% translate "Descrição" %}</th><th>{% translate "Valor" %}</th><th>{% translate "Unidade" %}</th></tr>
+      </thead>
+      <tbody>
+        {% for linha in resultado.tabela_resultados %}
+          <tr>
+            <td class="symbol">{{ linha.simbolo|safe }}</td>
+            <td>{{ linha.descricao }}{% if linha.help_text %}<small class="help-text">{{ linha.help_text }}</small>{% endif %}</td>
+            <td>{{ linha.valor_formatado }}</td>
+            <td class="unit">{{ linha.unidade }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{% if resultado.gillies %}
+<section class="table-panel">
+  <div class="panel-heading">
+    <div>
+      <span class="eyebrow">{% translate "Cálculo comparativo" %}</span>
+      <h2>{% translate "Comparativo com modelo de duas camadas" %}</h2>
+      <p>{% translate "Cálculo complementar independente; o WASP Modificado acima permanece inalterado." %}</p>
+    </div>
+  </div>
+
+  {% if not resultado.gillies.converged %}
+    <div class="messages result-messages">
+      <div class="message warning">
+        <strong>{% translate "Atenção" %}</strong>
+        <span>{% translate "O modelo de duas camadas não convergiu para as condições operacionais especificadas." %}</span>
+      </div>
+    </div>
+  {% else %}
+    {% if resultado.gillies.diagnostics.warnings %}
+      <div class="messages result-messages">
+        {% for aviso in resultado.gillies.diagnostics.warnings %}
+          <div class="message warning">
+            <strong>{% translate "Diagnóstico do modelo de duas camadas" %}</strong>
+            <span>{{ aviso }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>{% translate "Símbolo" %}</th><th>{% translate "Descrição" %}</th><th>{% translate "Valor" %}</th><th>{% translate "Unidade" %}</th></tr>
+        </thead>
+        <tbody>
+          {% for linha in resultado.gillies.rows %}
+            <tr>
+              <td class="symbol">{{ linha.symbol|safe }}</td>
+              <td>{{ linha.description }}</td>
+              <td>{{ linha.value_formatted }}</td>
+              <td class="unit">{{ linha.unit }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="chart" id="chart-gillies-section" style="min-height: 520px; margin-top: 1rem;"></div>
+
+    <details class="table-panel" style="margin-top:1rem;">
+      <summary>{% translate "Ver diagnóstico do modelo de duas camadas" %}</summary>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>{% translate "Parâmetro" %}</th><th>{% translate "Valor" %}</th></tr></thead>
+          <tbody>
+            {% for linha in resultado.gillies.diagnostic_rows %}
+              <tr><td>{{ linha.symbol }}</td><td>{{ linha.value_formatted }}</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  {% endif %}
+</section>
+{% endif %}
+
+{% if resultado.fourcm %}
+<section class="table-panel">
+  <div class="panel-heading">
+    <div>
+      <span class="eyebrow">{% translate "Cálculo comparativo" %}</span>
+      <h2>{% translate "WASP Modificado x 4CM" %}</h2>
+      <p>{% translate "Comparativo calculado automaticamente com as mesmas entradas. No gráfico da Curva J, WASP Modificado, água e 4CM aparecem juntos para comparação direta." %}</p>
+    </div>
+  </div>
+  <div class="messages result-messages">
+    <div class="message info">
+      <strong>{% translate "Nota" %}</strong>
+      <span>{% translate "O método 4CM é apresentado como referência comparativa alternativa ao WASP Modificado, normalmente menos conservativa, com tendência a prever menores perdas de carga e menor deposição." %}</span>
+    </div>
+  </div>
+  {% if resultado.fourcm.warnings %}
+    <div class="messages result-messages">
+      {% for aviso in resultado.fourcm.warnings %}
+        <div class="message warning"><strong>{% translate "Diagnóstico 4CM" %}</strong><span>{{ aviso }}</span></div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% if resultado.fourcm.comparison_rows %}
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>{% translate "Modelo" %}</th><th>{% translate "Resultado na velocidade operacional" %}</th><th>{% translate "Unidade" %}</th></tr></thead>
+      <tbody>
+        {% for linha in resultado.fourcm.comparison_rows %}
+          <tr><td>{{ linha.model }}</td><td>{{ linha.value_formatted }}</td><td class="unit">{{ linha.unit }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>{% translate "Símbolo" %}</th><th>{% translate "Descrição" %}</th><th>{% translate "Valor" %}</th><th>{% translate "Unidade" %}</th></tr></thead>
+      <tbody>
+        {% for linha in resultado.fourcm.rows %}
+          <tr><td class="symbol">{{ linha.symbol|safe }}</td><td>{{ linha.description }}{% if linha.help_text %}<small class="help-text">{{ linha.help_text }}</small>{% endif %}</td><td>{{ linha.value_formatted }}</td><td class="unit">{{ linha.unit }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  </section>
+{% endif %}
+
+<section class="export-panel">
+  <div class="export-header">
+    <div>
+      <span class="eyebrow">{% translate "Exportação" %}</span>
+      <h2>{% translate "Dados dos gráficos" %}</h2>
+      <p>{% translate "Selecione uma série para copiar os dados tabulados." %}</p>
+    </div>
+    <div class="export-controls">
+      <select id="export-chart-select" aria-label="{% translate 'Selecionar gráfico' %}"></select>
+      <button type="button" id="copy-chart-data">{% translate "Copiar para Excel" %}</button>
+    </div>
+  </div>
+  <p class="export-status" id="export-chart-status" aria-live="polite">{% translate "Os dados selecionados serão copiados diretamente para a área de transferência." %}</p>
+</section>
+
+{{ graficos|json_script:"graficos-data" }}
+<script src="{% url 'javascript-catalog' %}?v=41"></script>
+<script src="{% static 'js/graficos.js' %}?v=41"></script>
+{% endblock %}

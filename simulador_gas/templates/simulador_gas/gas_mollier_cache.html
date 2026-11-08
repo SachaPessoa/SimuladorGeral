@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Cache Mollier - Gases" %}{% endblock %}
+{% block content %}
+<section class="toolbar"><div><span class="eyebrow">{% translate "Diagrama de Mollier" %}</span><h1>{% translate "Cache Mollier de gases" %}</h1><p>{% translate "Resumo da malha usada na última simulação." %}</p></div><a class="button-link" href="{% url 'simulador_gas:results' %}">{% translate "Voltar ao resultado" %}</a></section>
+<section class="table-panel"><div class="table-scroll"><table><tbody>
+<tr><td>{% translate "Fluido" %}</td><td>{{ mollier.fluid|default:"-" }}</td></tr>
+<tr><td>{% translate "Origem" %}</td><td>{{ mollier.source|default:"-" }}</td></tr>
+<tr><td>{% translate "Versão" %}</td><td>{{ mollier.version|default:"-" }}</td></tr>
+<tr><td>{% translate "Pontos totais" %}</td><td>{{ mollier.total_points|default:"-" }}</td></tr>
+<tr><td>{% translate "Pontos válidos" %}</td><td>{{ mollier.valid_points|default:"-" }}</td></tr>
+<tr><td>{% translate "Pontos omitidos" %}</td><td>{{ mollier.omitted_points|default:"-" }}</td></tr>
+<tr><td>{% translate "Faixa P [bar]" %}</td><td>{{ mollier.P_range_bar|default:"-" }}</td></tr>
+<tr><td>{% translate "Faixa T [°C]" %}</td><td>{{ mollier.T_range_C|default:"-" }}</td></tr>
+</tbody></table></div></section>
+{% endblock %}

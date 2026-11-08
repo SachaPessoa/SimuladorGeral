@@ -1,0 +1,74 @@
+﻿{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}{% translate "Simulador de Gases" %}{% endblock %}
+{% block content %}
+<section class="page-heading gas-heading">
+  <div>
+    <span class="eyebrow">{% translate "Avaliação de Gás Compressível" %}</span>
+    <h1>{% translate "Simulador de Gases" %}</h1>
+    <p>{% translate "Simulação do escoamento de gases reais compressíveis em tubulações pressurizadas, incluindo avaliação das propriedades termodinâmicas e hidráulicas." %}</p>
+  </div>
+  <div class="page-actions">
+    <a class="button-link secondary" href="?reset=padrao">{% translate "Restaurar padrão" %}</a>
+    <button type="submit" form="gas-form">{% translate "Calcular gás" %}</button>
+  </div>
+</section>
+
+<form method="post" action="{% url 'simulador_gas:calcular' %}" class="simulation-form gas-form" id="gas-form">
+  {% csrf_token %}
+  {% if form.non_field_errors %}<div class="message error">{{ form.non_field_errors|striptags }}</div>{% endif %}
+
+  <section class="form-section">
+    <div class="section-title"><span class="section-number">01</span><h2>{% translate "Fluido" %}</h2><p>{% translate "Seleção do gás e propriedades críticas para gases conhecidos ou genéricos." %}</p></div>
+    <div class="field-grid compact-grid">
+      <label class="field wide-half"><span>{{ form.fluid_type.label }}</span>{{ form.fluid_type }}{% if form.fluid_type.errors %}<small class="error">{{ form.fluid_type.errors|striptags }}</small>{% endif %}</label>
+      <label class="field"><span>{{ form.mu_constant_Pa_s.label }}</span>{{ form.mu_constant_Pa_s }}{% if form.mu_constant_Pa_s.errors %}<small class="error">{{ form.mu_constant_Pa_s.errors|striptags }}</small>{% endif %}</label>
+      <div class="gas-fluid-summary wide-field">
+        <span>{% translate "Para fluidos conhecidos, o simulador usa MM, Pc, Tc, fator acêntrico e Cp Perry internos. Para fluido genérico, preencha o painel avançado abaixo." %}</span>
+        <strong>{% translate "Fator de atrito: Darcy." %}</strong>
+      </div>
+      {% for field in form %}
+        {% if field.name == "MM_kg_kmol" or field.name == "Pc_bar_a" or field.name == "Tc_C" or field.name == "omega" or field.name == "C1" or field.name == "C2" or field.name == "C3" or field.name == "C4" or field.name == "C5" or field.name == "Z_max_plot" %}
+          <label class="field gas-advanced-field"><span>{{ field.label }}</span>{{ field }}{% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}</label>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="section-title"><span class="section-number">02</span><h2>{% translate "Condições de entrada" %}</h2><p>{% translate "Estado inicial e vazão mássica do escoamento." %}</p></div>
+    <div class="field-grid compact-grid">
+      {% for field in form %}
+        {% if field.name == "P0_bar_a" or field.name == "T0_C" or field.name == "mdot_kg_h" or field.name == "thermal_model" %}
+          <label class="field"><span>{{ field.label }}</span>{{ field }}{% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}</label>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="section-title"><span class="section-number">03</span><h2>{% translate "Tubulação" %}</h2><p>{% translate "Geometria e discretização da linha." %}</p></div>
+    <div class="field-grid compact-grid">
+      {% for field in form %}
+        {% if field.name == "L_m" or field.name == "D_m" or field.name == "rough_m" or field.name == "dx_m" %}
+          <label class="field"><span>{{ field.label }}</span>{{ field }}{% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}</label>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="section-title"><span class="section-number">04</span><h2>{% translate "Diagrama de Mollier" %}</h2><p>{% translate "Faixa, recorte e geração h-s para o fluido selecionado." %}</p></div>
+    <div class="field-grid compact-grid">
+      {% for field in form %}
+        {% if field.name == "mollier_enabled" or field.name == "mollier_range" or field.name == "mollier_clip_outliers" or field.name == "mollier_P_min_bar" or field.name == "mollier_P_max_bar" or field.name == "mollier_T_min_C" or field.name == "mollier_T_max_C" %}
+          <label class="field"><span>{{ field.label }}</span>{{ field }}{% if field.errors %}<small class="error">{{ field.errors|striptags }}</small>{% endif %}</label>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="form-actions"><button type="submit">{% translate "Executar simulação de gases" %}</button></div>
+</form>
+<link rel="stylesheet" href="{% static 'simulador_gas/css/gas.css' %}?v=1">
+{% endblock %}

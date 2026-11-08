@@ -1,0 +1,16 @@
+﻿{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Memória de Cálculo - Gases" %}{% endblock %}
+{% block content %}
+<section class="toolbar"><div><span class="eyebrow">{% translate "Simulador de Gases" %}</span><h1>{% translate "Memória de cálculo" %}</h1><p>{% translate "Equações usadas no modelo monofásico de gases reais." %}</p></div><a class="button-link" href="{% url 'simulador_gas:home' %}">{% translate "Voltar ao simulador" %}</a></section>
+<section class="table-panel gas-memory">
+  <h2>Peng-Robinson</h2><p>\(Z^3-(1-B)Z^2+(A-3B^2-2B)Z-(AB-B^2-B^3)=0\)</p>
+  <h2>Cp Perry</h2><p>\(C_p=C_1+C_2[(C_3/T)/sinh(C_3/T)]^2+C_4[(C_5/T)/cosh(C_5/T)]^2\)</p>
+  <h2>{% translate "Densidade, vazão e velocidade" %}</h2><p>\(\rho=MM/V_m\), \(Q_v=\dot m/\rho\), \(v=4Q_v/(\pi D^2)\)</p>
+  <h2>{% translate "Reynolds e atrito" %}</h2><p>\(Re=\rho vD/\mu\). {% translate "Laminar:" %} \(f_D=64/Re\). {% translate "Turbulento:" %} Colebrook.</p>
+  <h2>{% translate "Energia e temperatura" %}</h2><p>{% translate "Isotérmico:" %} \(T_{i+1}=T_i\). {% translate "Adiabático:" %} {% translate "Joule-Thomson combinado com correção de Mach/estagnação." %}</p>
+  <h2>{% translate "Termodinâmica" %}</h2><p>\(dH=C_p dT+[V_m-T(\partial V_m/\partial T)_P]dP\), \(dS=C_p/T dT-(\partial V_m/\partial T)_P dP\), \(dU=dH-d(PV_m)\).</p>
+  <h2>Mollier</h2><p>{% translate "Diagrama h-s em base mássica, com isóbaras, isotérmicas, trajetória da linha e curva indicativa de saturação quando disponível." %}</p>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% endblock %}

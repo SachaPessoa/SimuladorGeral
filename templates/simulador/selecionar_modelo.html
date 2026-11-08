@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Selecionar modelo" %}{% endblock %}
+{% block content %}
+<section class="choice-panel">
+  <div class="choice-heading">
+    <span class="eyebrow">{% translate "Decisão de modelo" %}</span>
+    <h1>{% translate "Critério de escoamento homogêneo atingido" %}</h1>
+    <p>{% translate "O cálculo heterogêneo encontrou C/Ca total =" %} <strong>{{ c0ca_total|floatformat:2 }}%</strong>. {% translate "Escolha a linha de cálculo que deseja seguir." %}</p>
+  </div>
+
+  <form method="post" class="choice-form">
+    {% csrf_token %}
+    <div class="choice-grid">
+      <div class="model-choice-card">
+        <span class="model-tag">{% translate "Opção 1" %}</span>
+        <h2>{% translate "Modelo heterogêneo" %}</h2>
+        <p>{% translate "Continue com a segregação e o transporte por classes granulométricas." %}</p>
+        <button type="submit" name="decisao_modelo" value="heterogeneo">{% translate "Seguir heterogêneo" %}</button>
+      </div>
+      <div class="model-choice-card emphasized">
+        <span class="model-tag">{% translate "Opção 2" %}</span>
+        <h2>{% translate "Modelo homogêneo" %}</h2>
+        <p>{% translate "Recalcule considerando o comportamento reológico selecionado." %}</p>
+        <div class="homogeneous-choice">
+          <label>
+            <span>{% translate "Tipo de fluido homogêneo" %}</span>
+            <select name="tipo_fluido_homogeneo">
+              <option value="bingham" {% if tipo_fluido_atual == "bingham" %}selected{% endif %}>{% translate "Plástico de Bingham" %}</option>
+              <option value="powerlaw" {% if tipo_fluido_atual == "powerlaw" %}selected{% endif %}>Power Law</option>
+              <option value="hb" {% if tipo_fluido_atual == "hb" %}selected{% endif %}>Herschel-Bulkley</option>
+            </select>
+          </label>
+          <button type="submit" name="decisao_modelo" value="homogeneo">{% translate "Recalcular homogêneo" %}</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
+{% endblock %}

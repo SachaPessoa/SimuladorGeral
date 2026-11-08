@@ -1,0 +1,67 @@
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% translate "Simulador de Polpa" %}{% endblock %}</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'img/brand/favicon.ico' %}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{% static 'img/brand/favicon.png' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/brand/apple-touch-icon.png' %}">
+  <link rel="stylesheet" href="{% static 'css/app.css' %}?v=29">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="{% url 'simulador:formulario' %}">
+      <img class="brand-mark" src="{% static 'img/brand/brand-avatar.png' %}" alt="">
+      <span class="brand-copy">
+        <strong>{% translate "Simulador de Polpa" %}</strong>
+        <small>{% translate "Hidráulica e transporte" %}</small>
+      </span>
+    </a>
+    <nav>
+      {% if user.is_authenticated %}
+        <a class="button-quiet nav-tool-link" href="{% url 'simulador:formulario' %}">{% translate "Simulador de Polpa" %}</a>
+        <a class="button-quiet nav-tool-link" href="{% url 'simulador_gas:home' %}">{% translate "Simulador de Gases" %}</a>
+        <a class="button-quiet nav-tool-link" href="{% url 'simulador_calha:home' %}">{% translate "Simulador de Escoamento por Gravidade" %}</a>
+        <a class="button-quiet nav-tool-link" href="{% url 'simulador:vscalc' %}">{% translate "Simulador de Deposição" %}</a>
+        <span class="user-chip">{{ user.username }}</span>
+        <form method="post" action="{% url 'set_language' %}" class="language-form">
+          {% csrf_token %}
+          <input name="next" type="hidden" value="{{ request.get_full_path }}">
+          <span class="sr-only">{% translate "Idioma" %}</span>
+          <button type="submit" name="language" value="pt-br" class="language-choice{% if LANGUAGE_CODE == 'pt-br' %} active{% endif %}" title="Português">
+            <img src="{% static 'img/flag-pt-pair.svg' %}" alt=""><span>PT</span>
+          </button>
+          <button type="submit" name="language" value="en" class="language-choice{% if LANGUAGE_CODE == 'en' %} active{% endif %}" title="English">
+            <img src="{% static 'img/flag-en-pair.svg' %}" alt=""><span>EN</span>
+          </button>
+        </form>
+        <form method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit" class="button-quiet">{% translate "Sair" %}</button>
+        </form>
+      {% endif %}
+    </nav>
+  </header>
+  <main class="page">
+    {% if messages %}
+      <div class="messages">
+        {% for message in messages %}
+          <div class="message {{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <span class="footer-brand">
+      <img src="{% static 'img/brand/brand-avatar.png' %}" alt="">
+      <span>{% translate "Simulador técnico de hidráulica de polpas" %}</span>
+    </span>
+    <span>{% translate "Resultados devem ser avaliados com critério de engenharia." %}</span>
+  </footer>
+</body>
+</html>

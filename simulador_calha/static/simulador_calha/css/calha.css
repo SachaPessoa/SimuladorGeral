@@ -1,0 +1,39 @@
+
+.calha-form .calha-slurry-grid {
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 18px;
+}
+.calha-form .calha-slurry-grid .field {
+  min-width: 0;
+}
+.calha-form .calha-slurry-grid input,
+.calha-form .calha-slurry-grid select {
+  min-width: 0;
+}
+@media (max-width: 1120px) {
+  .calha-form .calha-slurry-grid { grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+}
+@media (max-width: 760px) {
+  .calha-form .calha-slurry-grid { grid-template-columns: 1fr; }
+}
+
+.geometry-fields { display: grid; grid-template-columns: repeat(3, minmax(210px, 1fr)); gap: 18px; }
+.geometry-fields[hidden] { display: none; }
+.chart-square { max-width: 680px; justify-self: center; width: 100%; }
+@media (max-width: 900px) {
+  .slurry-grid, .geometry-fields { grid-template-columns: 1fr; }
+}
+
+.geometry-rule {
+  display: grid;
+  align-content: center;
+  gap: 5px;
+  min-height: 100%;
+  padding: 14px;
+  border: 1px solid #b7d7e2;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+.geometry-rule strong { font-size: 18px; }
+.geometry-rule span { color: var(--muted); font-size: 12px; line-height: 1.4; }

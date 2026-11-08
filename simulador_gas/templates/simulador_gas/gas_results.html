@@ -1,0 +1,80 @@
+﻿{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}{% translate "Resultado - Simulador de Gases" %}{% endblock %}
+{% block content %}
+<section class="toolbar gas-heading">
+  <div>
+    <span class="eyebrow">{% translate "Análise de gás concluída" %}</span>
+    <h1>{% translate "Resultado do simulador de gases" %}</h1>
+    <p><strong>{{ resultado.summary.fluid_name }}</strong> · {% translate "Modelo térmico:" %} <strong>{{ resultado.summary.thermal_model }}</strong></p>
+  </div>
+  <div class="page-actions">
+    <a class="button-link secondary" href="{% url 'simulador_gas:calculation_memory' %}">{% translate "Memória de cálculo" %}</a>
+    <a class="button-link" href="{% url 'simulador_gas:home' %}">{% translate "Nova simulação" %}</a>
+  </div>
+</section>
+
+<section class="result-summary gas-summary">
+  <div class="metric primary"><span>{% translate "Pressão de saída" %}</span><strong>{{ resultado.summary_display.P_out_bar }}</strong><small class="unit">bar(a)</small></div>
+  <div class="metric"><span>{% translate "Queda de pressão" %}</span><strong>{{ resultado.summary_display.delta_P_bar }}</strong><small class="unit">bar</small></div>
+  <div class="metric"><span>{% translate "Temperatura de saída" %}</span><strong>{{ resultado.summary_display.T_out_K }}</strong><small class="unit">K</small></div>
+  <div class="metric"><span>{% translate "Vazão mássica" %}</span><strong>{{ resultado.summary_display.mdot_kg_s }}</strong><small class="unit">kg/s</small></div>
+  <div class="metric"><span>{% translate "Velocidade média" %}</span><strong>{{ resultado.summary_display.v_mean_m_s }}</strong><small class="unit">m/s</small></div>
+  <div class="metric"><span>{% translate "Z médio" %}</span><strong>{{ resultado.summary_display.Z_mean }}</strong><small class="unit">-</small></div>
+  <div class="metric"><span>Δh</span><strong>{{ resultado.summary_display.delta_h_kJ_kg }}</strong><small class="unit">kJ/kg</small></div>
+  <div class="metric"><span>{% translate "Mach máximo" %}</span><strong>{{ resultado.summary_display.Mach_max }}</strong><small class="unit">-</small></div>
+</section>
+
+<div class="content-heading"><span class="eyebrow">{% translate "Gráficos de gases" %}</span><h2>{% translate "Perfis calculados" %}</h2></div>
+<section class="charts gas-charts">
+  <div class="chart" id="gas-chart-pressure-temperature"></div>
+  <div class="chart" id="gas-chart-flow-density-velocity"></div>
+  <div class="chart" id="gas-chart-thermo"></div>
+  <div class="chart" id="gas-chart-flow-properties"></div>
+  <div class="chart" id="gas-chart-speed-sound"></div>
+  <div class="chart" id="gas-chart-specific-heats"></div>
+  <div class="chart gas-mollier-chart" id="gas-chart-mollier"></div>
+</section>
+
+{% if resultado.charts.mollier %}
+<section class="table-panel">
+  <div class="panel-heading"><div><span class="eyebrow">{% translate "Diagrama de Mollier" %}</span><h2>{% translate "Dados da malha h-s" %}</h2></div><a class="button-link secondary" href="{% url 'simulador_gas:mollier_cache' %}">{% translate "Ver cache" %}</a></div>
+  <div class="result-summary">
+    <div class="metric"><span>{% translate "Origem" %}</span><strong>{{ resultado.charts.mollier.source }}</strong><small>{{ resultado.charts.mollier.version }}</small></div>
+    <div class="metric"><span>{% translate "Pontos totais" %}</span><strong>{{ resultado.charts.mollier.total_points }}</strong><small>{% translate "malha" %}</small></div>
+    <div class="metric"><span>{% translate "Pontos válidos" %}</span><strong>{{ resultado.charts.mollier.valid_points }}</strong><small>{% translate "plotados" %}</small></div>
+    <div class="metric"><span>{% translate "Pontos omitidos" %}</span><strong>{{ resultado.charts.mollier.omitted_points }}</strong><small>{% translate "filtro físico/numérico" %}</small></div>
+  </div>
+</section>
+{% endif %}
+
+<section class="table-panel">
+  <div class="panel-heading"><div><span class="eyebrow">{% translate "Resultados detalhados" %}</span><h2>{% translate "Pontos calculados ao longo da tubulação" %}</h2></div></div>
+  <div class="table-scroll">
+    <table class="gas-detail-table">
+      <thead><tr><th>x [m]</th><th>P [bar]</th><th>T [K]</th><th>T [°C]</th><th>Z</th><th>ρ [kg/m³]</th><th>Qv [m³/h]</th><th>v [m/s]</th><th>Re</th><th>fD</th><th>h [kJ/kg]</th><th>s [kJ/kg·K]</th><th>u [kJ/kg]</th><th>Cp</th><th>Cv</th><th>gamma</th><th>Mach</th><th>c [m/s]</th><th>μJT [K/Pa]</th></tr></thead>
+      <tbody>
+        {% for row in resultado.rows %}
+        <tr><td>{{ row.display.x_m }}</td><td>{{ row.display.P_bar }}</td><td>{{ row.display.T_K }}</td><td>{{ row.display.T_C }}</td><td>{{ row.display.Z }}</td><td>{{ row.display.rho_kg_m3 }}</td><td>{{ row.display.Qv_m3_h }}</td><td>{{ row.display.v_m_s }}</td><td>{{ row.display.Re }}</td><td>{{ row.display.fD }}</td><td>{{ row.display.h_kJ_kg }}</td><td>{{ row.display.s_kJ_kgK }}</td><td>{{ row.display.u_kJ_kg }}</td><td>{{ row.display.Cp_kJ_kgK }}</td><td>{{ row.display.Cv_kJ_kgK }}</td><td>{{ row.display.gamma }}</td><td>{{ row.display.Mach }}</td><td>{{ row.display.c_m_s }}</td><td>{{ row.display.muJT_K_Pa }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="table-panel">
+  <div class="panel-heading"><div><span class="eyebrow">{% translate "Diagnóstico" %}</span><h2>{% translate "Consistência termodinâmica" %}</h2></div></div>
+  <div class="table-scroll"><table><tbody>
+    <tr><td>{% translate "Status de saturação" %}</td><td>{{ resultado.diagnostics.saturation_statuses|join:", " }}</td></tr>
+    <tr><td>{% translate "Superaquecimento mínimo [K]" %}</td><td>{{ resultado.diagnostics.min_superheat_K }}</td></tr>
+    <tr><td>{% translate "Erro betaS máximo" %}</td><td>{{ resultado.diagnostics.max_betaS_rel_error }}</td></tr>
+    <tr><td>ρ min/max [kg/m³]</td><td>{{ resultado.diagnostics.rho_min }} / {{ resultado.diagnostics.rho_max }}</td></tr>
+    <tr><td>Z min/max</td><td>{{ resultado.diagnostics.Z_min }} / {{ resultado.diagnostics.Z_max }}</td></tr>
+  </tbody></table></div>
+</section>
+
+{{ graficos|json_script:"gas-charts-data" }}
+<script src="{% url 'javascript-catalog' %}?v=6"></script>
+<link rel="stylesheet" href="{% static 'simulador_gas/css/gas.css' %}?v=1">
+<script src="{% static 'simulador_gas/js/gas_charts.js' %}?v=6"></script>
+{% endblock %}

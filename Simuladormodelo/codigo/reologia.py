@@ -1,0 +1,1 @@
+from .calculos import Bingfric, Bingtrans, Bingtrans2, Herschfric, Herschfric2, Newtoniano, Powerfric, Powertrans

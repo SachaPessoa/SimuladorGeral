@@ -1,0 +1,40 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Banco de dados
+*.sqlite3
+*.sqlite3-*
+*.db
+
+# Credenciais e configuracoes locais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*authtoken*
+*credentials*
+*secret*
+
+# Logs
+*.log
+
+# Backups e arquivos temporarios
+.codex_i18n_before/
+backup/
+backups/
+*.bak
+*.zip
+*.rar
+
+# Arquivos gerados
+media/
+staticfiles/
+build/
+dist/
+
+simuladorDjango/settings.py

@@ -1,0 +1,2391 @@
+# English translations for Slurry.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the Slurry project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Slurry Simulator\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-07-12 20:49-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#, python-format
+msgid "%(nome)s deve ser inteiro."
+msgstr "%(nome)s must be an integer."
+
+msgid "0,60 — distribuição granulométrica estreita"
+msgstr "0.60 — narrow particle-size distribution"
+
+msgid "0,75 para distribuição ampla; 0,60 para distribuição estreita."
+msgstr "0.75 for a broad distribution; 0.60 for a narrow distribution."
+
+msgid "0,75 — distribuição granulométrica ampla"
+msgstr "0.75 — broad particle-size distribution"
+
+msgid "4CM - Af"
+msgstr "4CM - Af"
+
+msgid "4CM - Ap"
+msgstr "4CM - Ap"
+
+msgid "4CM - Bf"
+msgstr "4CM - Bf"
+
+msgid "4CM - Bh"
+msgstr "4CM - Bh"
+
+msgid "4CM - Bp"
+msgstr "4CM - Bp"
+
+msgid "4CM - Cf"
+msgstr "4CM - Cf"
+
+msgid "4CM - Cp"
+msgstr "4CM - Cp"
+
+msgid "4CM - nB"
+msgstr "4CM - nB"
+
+msgid "4CM - nC"
+msgstr "4CM - nC"
+
+msgid "4CM - µs atrito sólido/parede"
+msgstr "4CM - µs solid-wall friction"
+
+msgid "4CM calculado no backend Python."
+msgstr "4MC calculated in the Python backend."
+
+msgid "A - Constante para τ₀ [dyn/cm²]"
+msgstr "A - Constant for τ₀ [dyn/cm²]"
+
+msgid "A - Parâmetro para τ0"
+msgstr "A - Parameter for τ0"
+
+msgid "A concentração informada deve estar entre 0 e 1."
+msgstr "The entered concentration must be between 0 and 1."
+
+msgid "A densidade dos sólidos deve ser maior que a densidade do líquido."
+msgstr "For the current model, solids density must be greater than liquid density."
+
+msgid ""
+"A entrada direta é convertida para A, B e B' equivalentes antes do cálculo. O motor permanece "
+"inalterado."
+msgstr ""
+"The direct input is converted to equivalent A, B and B' before calculation. The engine remains "
+"unchanged."
+
+msgid "A entrada reológica direta exige viscosidade do fluido maior que zero."
+msgstr "Direct rheological input requires fluid viscosity greater than zero."
+
+msgid "A entrada reológica direta exige φ entre 0 e 1."
+msgstr "Direct rheological input requires φ between 0 and 1."
+
+msgid "A equivalente"
+msgstr "Equivalent Cv"
+
+msgid "A rugosidade deve ser maior que zero."
+msgstr "Roughness must be greater than zero."
+
+msgid "A rugosidade não pode ser negativa."
+msgstr "Absolute roughness cannot be negative."
+
+msgid "A simulação gerou resultado numérico inválido. Verifique as entradas físicas do modelo."
+msgstr "The simulation produced an invalid numerical result. Check the model's physical inputs."
+
+msgid "A soma das frações granulométricas deve ser maior que zero."
+msgstr "The sum of particle size fractions must be greater than zero."
+
+msgid "A temperatura deve ser maior que o zero absoluto."
+msgstr "Temperature must be above absolute zero."
+
+msgid "A velocidade máxima do gráfico deve ser maior que a mínima."
+msgstr "The maximum chart velocity must be greater than the minimum."
+
+msgid "A velocidade operacional deve ser maior que zero."
+msgstr "Operating velocity must be greater than zero."
+
+msgid "Altura calculada para superfície lisa"
+msgstr "Calculated depth for a smooth surface"
+
+msgid "Altura calculada para superfície rugosa"
+msgstr "Calculated depth for a rough surface"
+
+msgid "Altura da camada inferior"
+msgstr "Lower-layer height"
+
+msgid "Altura de fluxo"
+msgstr "Flow depth"
+
+msgid "Altura depósito"
+msgstr "Deposit height"
+
+msgid "Altura máxima disponível da seção."
+msgstr "Maximum available section height."
+
+msgid "Altura relativa da camada inferior"
+msgstr "Relative lower-layer height"
+
+msgid "Altura relativa do depósito"
+msgstr "Relative deposit height"
+
+msgid "Análise concluída"
+msgstr "Analysis complete"
+
+msgid "Análise de gás concluída"
+msgstr "Gas analysis complete"
+
+msgid "As densidades dos sólidos e do fluido devem ser maiores que zero."
+msgstr "The solids and fluid densities must be greater than zero."
+
+msgid "As frações granulométricas não podem ser negativas."
+msgstr "Particle size fractions cannot be negative."
+
+msgid "As listas de diâmetros e proporções devem ter a mesma quantidade de itens."
+msgstr "The diameter and proportion lists must contain the same number of items."
+
+msgid "As proporções relativas devem somar 100%."
+msgstr "The relative proportions must add up to 100%."
+
+msgid ""
+"Atencao: Clim < Ct. Verificar se a comparacao e equivalente, pois Clim representa concentracao de"
+" grossos na camada inferior, enquanto Ct representa concentracao total in situ."
+msgstr ""
+"Attention: Clim < Ct. Check whether the comparison is equivalent, because Clim represents coarse "
+"concentration in the lower layer while Ct represents total in-situ concentration."
+
+msgid "Atenção"
+msgstr "Warning"
+
+msgid ""
+"Atenção: para o modelo Bingham, o índice n deve ser igual a 1. Com n diferente de 1, o resultado "
+"será calculado, mas o modelo Bingham deve ser considerado conceitualmente inválido."
+msgstr ""
+"Warning: for the Bingham model, index n must equal 1. With n different from 1, the result will be"
+" calculated, but the Bingham model must be considered conceptually invalid."
+
+msgid "Atenção: uma ou mais iterações atingiram o limite máximo sem convergência completa."
+msgstr "Warning: one or more iterations reached the maximum limit without full convergence."
+
+msgid "Automática"
+msgstr "Automatic"
+
+msgid "Automático pela granulometria"
+msgstr "Automatic from particle-size distribution"
+
+msgid "Automático: perguntar se C/Ca total > 80%"
+msgstr "Automatic: ask if total C/Ca > 80%"
+
+msgid "Avaliação operacional de Froude"
+msgstr "Froude operating assessment"
+
+msgid "B - Expoente para τ₀ [-]"
+msgstr "B - Exponent for τ₀ [-]"
+
+msgid "B - Parâmetro para τ0"
+msgstr "B - Parameter for τ0"
+
+msgid "B equivalente"
+msgstr "Equivalent B"
+
+msgid "B' - Parâmetro para η [-]"
+msgstr "B' - Parameter for η [-]"
+
+msgid "B' - Parâmetro para η ou K"
+msgstr "B' - Parameter for η or K"
+
+msgid "B' equivalente"
+msgstr "Equivalent B'"
+
+msgid "Base inferior definida automaticamente como vértice."
+msgstr "Bottom base automatically defined as a vertex."
+
+msgid "Bingham"
+msgstr "Bingham"
+
+msgid "C/Ca total calculado no teste heterogêneo"
+msgstr "Total C/Ca calculated in the heterogeneous test"
+
+msgid "Cache Mollier - Gases"
+msgstr "Mollier Cache - Gases"
+
+msgid "Cache Mollier de gases"
+msgstr "Gas Mollier cache"
+
+msgid "Calcular deposição"
+msgstr "Calculate deposition"
+
+msgid "Calcular gás"
+msgstr "Calculate Gas"
+
+msgid "Calcule Vsm, Vs, margens de operação, subcamada viscosa e diagnósticos de deposição."
+msgstr "Calculate Vsm, Vs, operating margins, viscous sublayer, and deposition diagnostics."
+
+#, python-format
+msgid "Campo obrigatório: %(nome)s"
+msgstr "Required field: %(nome)s"
+
+msgid "Carga de contato"
+msgstr "Contact load"
+
+msgid "Carrier"
+msgstr "Carrier"
+
+msgid "Carrier + finos"
+msgstr "Carrier + fines"
+
+msgid "Classificação de suspensão"
+msgstr "Suspension classification"
+
+msgid "Classificação hidráulica de Froude"
+msgstr "Froude hydraulic classification"
+
+msgid "Cmax - modelo de duas camadas"
+msgstr "Cmax - two-layer model"
+
+msgid "Coeficiente de Rigidez Polpa ajustado pelo fluido"
+msgstr "Fluid-adjusted slurry consistency coefficient"
+
+msgid "Coeficiente de Rigidez Veículo ajustado pelo fluido"
+msgstr "Fluid-adjusted carrier consistency coefficient"
+
+msgid "Coeficiente de arrasto"
+msgstr "Drag Coefficient"
+
+msgid "Coeficiente de rigidez"
+msgstr "Consistency coefficient"
+
+msgid "Coeficiente reológico após ajuste pela viscosidade do fluido carreador"
+msgstr "Rheological coefficient after carrier-fluid viscosity adjustment"
+
+msgid "Coeficiente reológico direto informado na referência de 20 °C"
+msgstr "Direct rheological coefficient entered at the 20 °C reference"
+
+msgid "Comparar com 4CM"
+msgstr "Compare with 4CM"
+
+msgid ""
+"Comparativo calculado automaticamente com as mesmas entradas. No gráfico da Curva J, WASP "
+"Modificado, água e 4CM aparecem juntos para comparação direta."
+msgstr ""
+"Comparison automatically calculated with the same inputs. In the J Curve chart, Modified WASP, "
+"water, and 4CM are shown together for direct comparison."
+
+msgid "Comparativo com modelo de duas camadas"
+msgstr "Comparison with the two-layer model"
+
+msgid "Compressível"
+msgstr "Compressible"
+
+msgid "Compressível:"
+msgstr "Compressible:"
+
+msgid "Comprimento"
+msgstr "Length"
+
+msgid "Comprimento [m]"
+msgstr "Length [m]"
+
+msgid "Concentracao massica equivalente"
+msgstr "Equivalent Mass Concentration"
+
+msgid "Concentracao relativa no maximo"
+msgstr "Relative Concentration at Maximum"
+
+msgid "Concentracao volumetrica interna"
+msgstr "Internal Volumetric Concentration"
+
+msgid "Concentração Volumétrica Veículo"
+msgstr "Carrier volumetric concentration"
+
+msgid "Concentração Volumétrica em y/D=0,1"
+msgstr "Volumetric concentration at y/D=0.1"
+
+msgid "Concentração compactação máxima"
+msgstr "Maximum packing concentration"
+
+msgid "Concentração mássica"
+msgstr "Mass concentration"
+
+msgid "Concentração mássica da polpa"
+msgstr "Slurry mass concentration"
+
+msgid "Concentração mássica de sólidos. Exemplo: 50 representa 50%."
+msgstr "Solids mass concentration. Example: 50 represents 50%."
+
+msgid "Concentração total entregue/calculada"
+msgstr "Delivered/calculated total concentration"
+
+msgid "Concentração total in situ"
+msgstr "Total in-situ concentration"
+
+msgid "Concentração volumétrica"
+msgstr "Volumetric concentration"
+
+msgid "Condições de entrada"
+msgstr "Inlet Conditions"
+
+msgid "Condições hidráulicas impostas à descida."
+msgstr "Hydraulic conditions imposed on the gravity flow."
+
+msgid "Configuração do cenário"
+msgstr "Scenario setup"
+
+msgid "Consistência termodinâmica"
+msgstr "Thermodynamic consistency"
+
+msgid "Constante A da correlação τ₀ = A · φV."
+msgstr "A constant in the τ₀ = A · φV correlation."
+
+msgid "Constante de Sutherland"
+msgstr "Sutherland Constant"
+
+msgid "Constante reológica interna equivalente"
+msgstr "Equivalent internal rheological constant"
+
+msgid "Constantes laboratoriais"
+msgstr "Laboratory constants"
+
+msgid "Constantes laboratoriais A, B e B'"
+msgstr "Laboratory constants A, B and B'"
+
+msgid "Continue com a segregação e o transporte por classes granulométricas."
+msgstr "Continue with segregation and transport by particle-size class."
+
+msgid "Controle numérico e gráficos"
+msgstr "Numerical controls and charts"
+
+msgid "Convenção do fator de atrito utilizada"
+msgstr "Friction-factor convention used"
+
+msgid "Conversão dos parâmetros diretos para os valores utilizados internamente."
+msgstr "Conversion of the direct parameters to the values used internally."
+
+msgid "Conversão interna"
+msgstr "Internal conversion"
+
+msgid "Copiar para Excel"
+msgstr "Copy to Excel"
+
+msgid "Correcao de inclinacao"
+msgstr "Inclination Correction"
+
+msgid "Cp, Cv e gamma"
+msgstr "Cp, Cv, and Gamma"
+
+msgid "Critério de erro"
+msgstr "Error criterion"
+
+msgid "Critério de escoamento homogêneo atingido"
+msgstr "Homogeneous-flow criterion reached"
+
+msgid "Critério de escoamento homogêneo atingido, mas o modelo heterogêneo foi selecionado."
+msgstr "The homogeneous-flow criterion was reached, but the heterogeneous model was selected."
+
+msgid "Critério de escoamento homogêneo atingido: sólidos suspensos acima de 80%."
+msgstr "Homogeneous-flow criterion reached: suspended solids above 80%."
+
+msgid "Critérios de deposição"
+msgstr "Deposition criteria"
+
+msgid "Cv equivalente"
+msgstr "Equivalent Cv"
+
+msgid "Cvd/Cvb"
+msgstr "Cvd/Cvb"
+
+msgid "Cálculo"
+msgstr "Calculation"
+
+msgid "Cálculo comparativo"
+msgstr "Comparative calculation"
+
+msgid "Cálculo comparativo opcional para regime heterogêneo. O WASP Modificado permanece inalterado."
+msgstr "Optional comparative calculation for heterogeneous flow. Modified WASP remains unchanged."
+
+msgid "Cálculo complementar independente; o WASP Modificado acima permanece inalterado."
+msgstr "Independent complementary calculation; the Modified WASP result above remains unchanged."
+
+msgid "D - Diâmetro interno"
+msgstr "D - Internal diameter"
+
+msgid "DI - Diâmetro interno do tubo"
+msgstr "ID - Pipe internal diameter"
+
+msgid "Dados da malha h-s"
+msgstr "h-s grid data"
+
+msgid "Dados dos gráficos"
+msgstr "Chart data"
+
+msgid "Dados insuficientes ou fora da faixa para o modelo de duas camadas."
+msgstr "Insufficient or out-of-range data for the two-layer model."
+
+msgid "Decisão de modelo"
+msgstr "Model decision"
+
+msgid "Definição da seção transversal e unidades de entrada."
+msgstr "Cross-section definition and input units."
+
+msgid "Densidade [kg/m³]"
+msgstr "Density [kg/m³]"
+
+msgid "Densidade da Polpa"
+msgstr "Slurry density"
+
+msgid "Densidade da mistura"
+msgstr "Mixture density"
+
+msgid "Densidade da polpa"
+msgstr "Slurry density"
+
+msgid "Densidade do Veículo"
+msgstr "Carrier density"
+
+msgid "Densidade do líquido carreador."
+msgstr "Carrier liquid density."
+
+msgid "Densidade do líquido transportador em kg/m³."
+msgstr "Carrier-liquid density in kg/m³."
+
+msgid "Densidade real das partículas sólidas."
+msgstr "True density of the solid particles."
+
+msgid "Densidade real dos sólidos em kg/m³."
+msgstr "True solids density in kg/m³."
+
+msgid "Densidade, vazão e velocidade"
+msgstr "Density, flow rate, and velocity"
+
+msgid "Densidade, vazão volumétrica e velocidade"
+msgstr "Density, Volumetric Flow Rate, and Velocity"
+
+msgid "Densidades ou viscosidade invalidas para o modelo de duas camadas."
+msgstr "Invalid densities or viscosity for the two-layer model."
+
+msgid "Deposição"
+msgstr "Deposition"
+
+msgid "Deposição - Cvb concentração do leito"
+msgstr "Deposition - Cvb bed concentration"
+
+msgid "Deposição - critério Thomas"
+msgstr "Deposition - Thomas criterion"
+
+msgid "Deposição - diâmetro equivalente (µm)"
+msgstr "Deposition - equivalent diameter (µm)"
+
+msgid "Deposição - diâmetro final do gráfico (µm)"
+msgstr "Deposition - final chart diameter (µm)"
+
+msgid "Deposição - diâmetro inicial do gráfico (µm)"
+msgstr "Deposition - initial chart diameter (µm)"
+
+msgid "Deposição - inclinação da tubulação"
+msgstr "Deposition - pipe inclination"
+
+msgid "Deposição - velocidade máxima do gráfico (m/s)"
+msgstr "Deposition - maximum chart velocity (m/s)"
+
+msgid "Deposição - velocidade mínima do gráfico (m/s)"
+msgstr "Deposition - minimum chart velocity (m/s)"
+
+msgid "Deposição - velocidade terminal"
+msgstr "Deposition - terminal velocity"
+
+msgid "Deposição - y+ da subcamada"
+msgstr "Deposition - sublayer y+"
+
+msgid "Deposição - µs atrito do leito"
+msgstr "Deposition - µs bed friction"
+
+msgid "Descrição"
+msgstr "Description"
+
+msgid "Diagnóstico"
+msgstr "Diagnostics"
+
+msgid "Diagnóstico 4CM"
+msgstr "4CM diagnostics"
+
+msgid "Diagnóstico de deposição"
+msgstr "Deposition diagnostics"
+
+msgid "Diagnóstico do modelo de duas camadas"
+msgstr "Two-layer model diagnostics"
+
+msgid "Diagrama de Mollier"
+msgstr "Mollier Chart"
+
+msgid ""
+"Diagrama h-s em base mássica, com isóbaras, isotérmicas, trajetória da linha e curva indicativa "
+"de saturação quando disponível."
+msgstr ""
+"h-s diagram on a mass basis, with isobars, isotherms, the line trajectory, and an indicative "
+"saturation curve when available."
+
+msgid "Diferença 4CM - WASP"
+msgstr "4CM - WASP difference"
+
+msgid "Diferença absoluta"
+msgstr "Absolute difference"
+
+msgid "Diferença percentual"
+msgstr "Percentage difference"
+
+msgid "Diferença relativa"
+msgstr "Relative difference"
+
+msgid "Difusividade Adimensional final"
+msgstr "Final dimensionless diffusivity"
+
+msgid "Diâmetro correspondente ao percentil passante d85."
+msgstr "Diameter corresponding to the d85 passing percentile."
+
+msgid "Diâmetro hidráulico"
+msgstr "Hydraulic diameter"
+
+msgid "Diâmetro interno"
+msgstr "Internal Diameter"
+
+msgid "Diâmetro interno [m]"
+msgstr "Internal Diameter [m]"
+
+msgid "Diâmetro interno da seção tubular."
+msgstr "Internal diameter of the tubular section."
+
+msgid "Elevação inicial"
+msgstr "Initial Elevation"
+
+msgid "Energia e temperatura"
+msgstr "Energy and temperature"
+
+msgid "Entradas do simulador de gases restauradas para o padrão."
+msgstr "Gas simulator inputs restored to defaults."
+
+msgid "Entradas restauradas para o padrão de fábrica."
+msgstr "Inputs restored to factory defaults."
+
+msgid "Entrar no simulador"
+msgstr "Enter simulator"
+
+msgid "Equações reológicas usadas pelos parâmetros A, B e B linha"
+msgstr "Rheological equations used by parameters A, B, and B prime"
+
+msgid "Equações usadas no modelo monofásico de gases reais."
+msgstr "Equations used in the single-phase real-gas model."
+
+msgid "Erro betaS máximo"
+msgstr "Maximum betaS error"
+
+msgid "Erro final f"
+msgstr "Final f error"
+
+msgid "Erro final β"
+msgstr "Final β error"
+
+msgid "Erro fisico ou numerico: C2 <= 0."
+msgstr "Physical or numerical error: C2 <= 0."
+
+msgid "Erro fisico ou numerico: C2 <= 0. Verificar Ct, Cr, velocidade, d50, Cmax e v_inf."
+msgstr "Physical or numerical error: C2 <= 0. Check Ct, Cr, velocity, d50, Cmax, and v_inf."
+
+msgid "Erro fisico ou numerico: Clim <= C1, logo C2 <= 0."
+msgstr "Physical or numerical error: Clim <= C1, therefore C2 <= 0."
+
+msgid "Escala do gráfico de perda de carga"
+msgstr "Head-loss chart scale"
+
+msgid "Escala física das velocidades 4CM"
+msgstr "Physical scale of 4CM velocities"
+
+msgid "Escoamento monofásico"
+msgstr "Single-phase flow"
+
+msgid "Escolha a linha de cálculo que deseja seguir."
+msgstr "Choose the calculation path to continue."
+
+msgid "Escolha a unidade da rugosidade absoluta: mm, µm ou m."
+msgstr "Choose the absolute roughness unit: mm, µm, or m."
+
+msgid "Escolha a unidade usada no campo DI: polegada, milímetro ou metro."
+msgstr "Choose the unit used for ID: inch, millimeter, or meter."
+
+msgid "Escolha como os parâmetros reológicos serão informados."
+msgstr "Choose how the rheological parameters will be entered."
+
+msgid "Escolha entre os parâmetros laboratoriais atuais ou valores reológicos informados diretamente."
+msgstr "Choose between the current laboratory parameters or directly entered rheological values."
+
+msgid "Escolha o modelo reológico usado quando a linha homogênea for selecionada."
+msgstr "Choose the rheological model used when the homogeneous calculation is selected."
+
+msgid "Escolha se a concentração informada representa fração volumétrica ou fração mássica."
+msgstr "Choose whether the entered concentration represents a volumetric or mass fraction."
+
+msgid "Espessura da subcamada laminar"
+msgstr "Laminar sublayer thickness"
+
+msgid "Estado inicial e vazão mássica do escoamento."
+msgstr "Initial state and mass flow rate of the flow."
+
+msgid "Estratificado"
+msgstr "Stratified"
+
+msgid "Executar simulação"
+msgstr "Run simulation"
+
+msgid "Executar simulação de gases"
+msgstr "Run Gas Simulation"
+
+msgid "Execute uma simulação de gases primeiro."
+msgstr "Run a gas simulation first."
+
+msgid "Execute uma simulação primeiro."
+msgstr "Run a simulation first."
+
+msgid ""
+"Explore as curvas calculadas e o comportamento hidráulico do sistema nas condições operacionais "
+"simuladas."
+msgstr ""
+"Explore the calculated curves and the hydraulic behavior of the system under the simulated "
+"operating conditions."
+
+msgid "Explore as curvas, pontos operacionais e comparativos calculados."
+msgstr "Explore the calculated curves, operating points, and comparisons."
+
+msgid "Expoente B da correlação τ₀ = A · φV."
+msgstr "B exponent in the τ₀ = A · φV correlation."
+
+msgid "Expoente da equação τ0 = A·φ^B. φ é a fração volumétrica total."
+msgstr "Exponent in the equation τ0 = A·φ^B. φ is the total volume fraction."
+
+msgid "Expoente reológico interno equivalente"
+msgstr "Equivalent internal rheological exponent"
+
+msgid "Exportação"
+msgstr "Export"
+
+msgid "Faixa Mollier"
+msgstr "Mollier range"
+
+msgid "Faixa P [bar]"
+msgstr "P range [bar]"
+
+msgid "Faixa T [°C]"
+msgstr "T range [°C]"
+
+msgid "Faixa dos gráficos"
+msgstr "Chart ranges"
+
+msgid "Faixa, recorte e geração h-s para o fluido selecionado."
+msgstr "Range, clipping, and h-s generation for the selected fluid."
+
+msgid "Faixas de cálculo, convergência e apresentação."
+msgstr "Calculation ranges, convergence, and presentation."
+
+msgid "Fator A''"
+msgstr "A'' Factor"
+
+msgid "Fator B''"
+msgstr "B'' Factor"
+
+msgid "Fator C''"
+msgstr "C'' Factor"
+
+msgid "Fator Darcy [-]"
+msgstr "Darcy Factor [-]"
+
+msgid "Fator acêntrico"
+msgstr "Acentric Factor"
+
+msgid "Fator acêntrico [-]"
+msgstr "Acentric factor [-]"
+
+msgid "Fator de Darcy para superfície lisa"
+msgstr "Darcy factor for a smooth surface"
+
+msgid "Fator de Darcy para superfície rugosa"
+msgstr "Darcy factor for a rough surface"
+
+msgid "Fator de ajuste para perda de carga"
+msgstr "Head-loss adjustment factor"
+
+msgid "Fator de atrito Darcy"
+msgstr "Darcy Friction Factor"
+
+msgid "Fator de atrito de Darcy"
+msgstr "Darcy friction factor"
+
+msgid "Fator de atrito de Fanning"
+msgstr "Fanning friction factor"
+
+msgid "Fator de atrito final"
+msgstr "Final friction factor"
+
+msgid "Fator de atrito operacional"
+msgstr "Operating friction factor"
+
+msgid "Fator de atrito:"
+msgstr "Friction factor:"
+
+msgid "Fechamento geometrico invalido: A2/A fora do intervalo 0-1."
+msgstr "Invalid geometric closure: A2/A outside the 0-1 range."
+
+msgid "Finos -74 µm"
+msgstr "Fines -74 µm"
+
+msgid "Fluido"
+msgstr "Fluid"
+
+msgid "Forçar modelo heterogêneo"
+msgstr "Force heterogeneous model"
+
+msgid "Forçar modelo homogêneo"
+msgstr "Force homogeneous model"
+
+msgid "Fracao grossa +74 um muito pequena; d12 automatico pode ficar numericamente instavel."
+msgstr "Coarse +74 um fraction is very small; automatic d12 may become numerically unstable."
+
+msgid "Fração carrier/finos"
+msgstr "Carrier/Fines Fraction"
+
+msgid "Fração de carga de contato"
+msgstr "Contact-load fraction"
+
+msgid "Fração de área da camada inferior"
+msgstr "Lower-layer area fraction"
+
+msgid "Fração estratificada"
+msgstr "Stratified Fraction"
+
+msgid "Fração heterogênea"
+msgstr "Heterogeneous Fraction"
+
+msgid "Fração mássica"
+msgstr "Mass fraction"
+
+msgid "Fração pseudo-homogênea"
+msgstr "Pseudo-homogeneous Fraction"
+
+msgid "Fração volumétrica total"
+msgstr "Total volumetric fraction"
+
+msgid "Geometria"
+msgstr "Geometry"
+
+msgid "Geometria da seção [-]"
+msgstr "Section Geometry [-]"
+
+msgid "Geometria e condição operacional do sistema."
+msgstr "System geometry and operating condition."
+
+msgid "Geometria e discretização da linha."
+msgstr "Line geometry and calculation step."
+
+msgid "Geometria, rugosidade e velocidade média usada no diagnóstico da subcamada."
+msgstr "Geometry, roughness, and mean velocity used for sublayer diagnostics."
+
+msgid "Gradiente hidráulico total"
+msgstr "Total Hydraulic Gradient"
+
+msgid "Grossos +74 µm"
+msgstr "Coarse particles +74 µm"
+
+msgid "Grossos suspensos na camada superior"
+msgstr "Coarse particles suspended in the upper layer"
+
+msgid "Grossos totais na camada inferior = C1 + C2"
+msgstr "Total coarse particles in the lower layer = C1 + C2"
+
+msgid "Gráficos da simulação"
+msgstr "Simulation charts"
+
+msgid "Gráficos de gases"
+msgstr "Gas Charts"
+
+msgid "Herschel-Bulkley"
+msgstr "Herschel-Bulkley"
+
+msgid "Heterogêneo"
+msgstr "heterogeneous"
+
+msgid "Hidráulica e transporte"
+msgstr "Hydraulics and transport"
+
+msgid "Identificação"
+msgstr "Sign in"
+
+msgid "Idioma"
+msgstr "Language"
+
+msgid "Inclinação longitudinal"
+msgstr "Longitudinal slope"
+
+msgid "Inclinação longitudinal. Exemplo: 5 representa uma descida de 5%."
+msgstr "Longitudinal slope. Example: 5 represents a 5% downward slope."
+
+msgid "Inclui o Four Component Model como cálculo comparativo do WASP Modificado."
+msgstr "Includes the Four Component Model as a comparative calculation against Modified WASP."
+
+msgid "Incremento de grossos na camada inferior"
+msgstr "Coarse-particle increment in the lower layer"
+
+msgid "Incremento entre velocidades calculadas nos gráficos. Exemplo: 0,05 ou 0.05."
+msgstr "Increment between velocities calculated in the charts. Example: 0.05."
+
+msgid "Informe A, B e B' no modo de parâmetros laboratoriais."
+msgstr "Enter A, B, and B' in laboratory-parameter mode."
+
+msgid "Informe a concentração mássica como fração decimal, não em %. Exemplo: 0,65 para 65%."
+msgstr "Enter the mass concentration as a decimal fraction, not a percentage. Example: 0.65 for 65%."
+
+msgid "Informe a concentração volumétrica como fração decimal, não em %. Exemplo: 0,30 para 30%."
+msgstr "Enter the volumetric concentration as a decimal fraction, not a percentage. Example: 0.30 for 30%."
+
+msgid "Informe a faixa manual completa do Mollier."
+msgstr "Enter the complete manual Mollier range."
+
+msgid ""
+"Informe a rugosidade absoluta da tubulação. O sistema calcula e/D = ε / DI usando unidades "
+"consistentes."
+msgstr "Enter the absolute pipe roughness. The system calculates e/D = ε / ID using consistent units."
+
+msgid "Informe a rugosidade absoluta na unidade selecionada ao lado."
+msgstr "Enter the absolute roughness in the unit selected alongside."
+
+msgid "Informe as condições físicas, reológicas e operacionais para executar o modelo hidráulico."
+msgstr "Enter the physical, rheological, and operating conditions to run the hydraulic model."
+
+msgid "Informe as condições operacionais, propriedades da polpa e geometria da seção."
+msgstr "Enter the operating conditions, slurry properties, and section geometry."
+
+msgid "Informe como fração decimal, não em %. Exemplo: 0,30 para 30%."
+msgstr "Enter as a decimal fraction, not a percentage. Example: 0.30 for 30%."
+
+msgid "Informe constantes laboratoriais ou parâmetros reológicos diretos."
+msgstr "Enter laboratory constants or direct rheological parameters."
+
+msgid "Informe este parâmetro."
+msgstr "Enter this parameter."
+
+msgid ""
+"Informe o diâmetro interno na unidade selecionada ao lado. O cálculo converte internamente para "
+"polegadas."
+msgstr ""
+"Enter the internal diameter in the selected unit. The calculation converts it internally to "
+"inches."
+
+msgid "Informe η maior que zero."
+msgstr "Enter η greater than zero."
+
+msgid ""
+"Informe η ou K considerando água de referência com aproximadamente 1,002 cP. O simulador aplicará"
+" o ajuste proporcional à viscosidade do fluido carreador informada."
+msgstr ""
+"Enter η or K using reference water at approximately 1.002 cP. The simulator will apply an "
+"adjustment proportional to the entered carrier-fluid viscosity."
+
+msgid ""
+"Informe η para Bingham ou K para Power Law/Herschel-Bulkley, na referência de 20 °C. O sistema "
+"ajustará pela viscosidade do fluido carreador."
+msgstr ""
+"Enter η for Bingham or K for Power Law/Herschel-Bulkley at the 20 °C reference. The system will "
+"adjust it using the carrier-fluid viscosity."
+
+msgid "Informe η/K direto maior que zero e sua unidade."
+msgstr "Enter direct η/K greater than zero and its unit."
+
+msgid "Informe τ₀ direto e sua unidade para Bingham ou Herschel-Bulkley."
+msgstr "Enter direct τ₀ and its unit for Bingham or Herschel-Bulkley."
+
+msgid "Informe τ₀ maior que zero para o modelo atual."
+msgstr "Enter τ₀ greater than zero for the current model."
+
+msgid "Interações acoplamento"
+msgstr "Coupling iterations"
+
+msgid "Interações internas modelo"
+msgstr "Internal model iterations"
+
+msgid "Isotérmico"
+msgstr "Isothermal"
+
+msgid "Isotérmico:"
+msgstr "Isothermal"
+
+#, python-format
+msgid "Iteração sem convergência completa: %(iteracoes)s."
+msgstr "Iteration without full convergence: %(iteracoes)s."
+
+msgid "Iterações"
+msgstr "Iterations"
+
+msgid "Joule-Thomson combinado com correção de Mach/estagnação."
+msgstr "Joule-Thomson combined with Mach/stagnation correction."
+
+msgid "Laminar:"
+msgstr "Laminar"
+
+msgid "Largura da base inferior."
+msgstr "Bottom-width dimension."
+
+msgid "Largura da lâmina livre"
+msgstr "Free-surface width"
+
+msgid "Limite de iterações do acoplamento. O sistema limita a 100."
+msgstr "Coupling iteration limit. The system limits it to 100."
+
+msgid "Limite inferior do perfil vertical. Use valores entre 0 e 1."
+msgstr "Lower limit of the vertical profile. Use values between 0 and 1."
+
+msgid "Limite superior do perfil vertical. Use valores entre 0 e 1."
+msgstr "Upper limit of the vertical profile. Use values between 0 and 1."
+
+#, python-format
+msgid ""
+"Limites opcionais para os gráficos paramétricos. Se vazios, usam 50% e 200% da condição "
+"operacional."
+msgstr ""
+"Optional limits for parametric charts. If left empty, they use 50% and 200% of the operating "
+"condition."
+
+msgid "Linear"
+msgstr "Linear"
+
+msgid "Lista de diâmetros em micra, na mesma ordem das proporções. Separe por vírgula: 250, 180, 125."
+msgstr ""
+"List of diameters in microns, in the same order as the proportions. Separate with commas: 250, "
+"180, 125."
+
+msgid ""
+"Lista em %, separada por vírgula. A soma deve ser 100. Use ponto decimal dentro dos valores se "
+"precisar: 10.5, 20, 69.5."
+msgstr ""
+"Comma-separated percentage list. The sum must be 100. Use decimal points within values when "
+"needed: 10.5, 20, 69.5."
+
+#, python-format
+msgid "Lista inválida em %(nome)s. Use vírgula para separar itens."
+msgstr "Invalid list in %(nome)s. Use commas to separate items."
+
+msgid "Log-log"
+msgstr "Log-log"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "MM [kg/kmol]"
+msgstr "MM [kg/kmol]"
+
+msgid "Mach máximo"
+msgstr "Maximum Mach Number"
+
+msgid "Maior diâmetro de partícula considerado."
+msgstr "Largest particle diameter considered."
+
+msgid "Manning equivalente"
+msgstr "Equivalent Manning coefficient"
+
+msgid "Manual"
+msgstr "Manual"
+
+msgid "Manual/debug"
+msgstr "Manual/debug"
+
+msgid "Margem U/Ut"
+msgstr "U/Ut Margin"
+
+msgid "Margem de alerta de saturação"
+msgstr "Saturation Warning Margin"
+
+msgid "Margem sobre Reynolds crítico"
+msgstr "Margin above critical Reynolds number"
+
+msgid "Margem sobre Vs"
+msgstr "Margin above Vs"
+
+msgid "Margem sobre velocidade mínima"
+msgstr "Margin above minimum velocity"
+
+msgid "Massa molar"
+msgstr "Molar Mass"
+
+msgid "Memória de Cálculo - Gases"
+msgstr "Calculation Memory - Gases"
+
+msgid "Memória de cálculo"
+msgstr "Calculation memory"
+
+msgid "Modelo"
+msgstr "Model"
+
+msgid "Modelo de duas camadas convergiu."
+msgstr "Two-layer model converged."
+
+msgid ""
+"Modelo de duas camadas nao convergiu para estas condicoes operacionais. O resultado nao deve ser "
+"usado como referencia."
+msgstr ""
+"The two-layer model did not converge for these operating conditions. The result must not be used "
+"as a reference."
+
+msgid "Modelo de escoamento"
+msgstr "Flow model"
+
+msgid "Modelo de escoamento selecionado"
+msgstr "Selected flow model"
+
+msgid "Modelo heterogêneo"
+msgstr "Heterogeneous model"
+
+msgid "Modelo homogêneo"
+msgstr "Homogeneous model"
+
+msgid ""
+"Modelo independente para gases reais em tubulações com Peng-Robinson, Darcy-Weisbach, Joule-"
+"Thomson, Mach e Mollier."
+msgstr ""
+"Independent model for real gases in pipelines with Peng-Robinson, Darcy-Weisbach, Joule-Thomson, "
+"Mach, and Mollier."
+
+msgid "Modelo selecionado automaticamente"
+msgstr "Automatically Selected Model"
+
+msgid "Modelo térmico"
+msgstr "Thermal Model"
+
+msgid "Modelo térmico:"
+msgstr "Thermal model:"
+
+msgid "Modo de entrada reológica"
+msgstr "Rheology input mode"
+
+msgid "Mostrar Mollier"
+msgstr "Show Mollier"
+
+msgid "Multiplicador aplicado à perda de carga calculada. Use 1 para sem ajuste."
+msgstr "Multiplier applied to the calculated head loss. Use 1 for no adjustment."
+
+msgid "Máximo de iterações"
+msgstr "Maximum iterations"
+
+msgid ""
+"No automático, o sistema calcula heterogêneo e pergunta pelo homogêneo se C/Ca total for maior "
+"que 80%."
+msgstr ""
+"In automatic mode, the system calculates the heterogeneous model and asks about the homogeneous "
+"model if total C/Ca exceeds 80%."
+
+msgid ""
+"Nota técnica: o ponto operacional é calculado com o acoplamento completo do Wasp modificado. Os "
+"demais pontos das curvas são aproximações que utilizam o Cvmax convergido da condição "
+"operacional, sem repetir o acoplamento completo para cada velocidade."
+msgstr ""
+"Technical note: the operating point is calculated with the full Modified WASP coupling. The "
+"remaining curve points are approximations that use the Cvmax converged at the operating "
+"condition, without repeating the full coupling at each velocity."
+
+msgid "Nova simulação"
+msgstr "New simulation"
+
+msgid "Não encontrei a simulação pendente. Execute a simulação novamente."
+msgstr "The pending simulation was not found. Run the simulation again."
+
+msgid "Número de Froude"
+msgstr "Froude number"
+
+#, python-format
+msgid "Número de Froude avaliado como %(status)s."
+msgstr "Froude number evaluated as %(status)s."
+
+msgid "Número de Hedstrom"
+msgstr "Hedstrom number"
+
+msgid "Número de Hedstrom operacional"
+msgstr "Operating Hedstrom number"
+
+msgid "Número de Reynolds generalizado"
+msgstr "Generalized Reynolds number"
+
+msgid "Número de Reynolds operacional"
+msgstr "Operating Reynolds number"
+
+msgid "O cálculo heterogêneo encontrou C/Ca total ="
+msgstr "The heterogeneous calculation found total C/Ca ="
+
+msgid "O diâmetro final do gráfico deve ser maior que o inicial."
+msgstr "The final chart diameter must be greater than the initial diameter."
+
+msgid "O diâmetro interno convertido deve ser maior que zero."
+msgstr "The converted internal diameter must be greater than zero."
+
+msgid ""
+"O método 4CM é apresentado como referência comparativa alternativa ao WASP Modificado, "
+"normalmente menos conservativa, com tendência a prever menores perdas de carga e menor deposição."
+msgstr ""
+"The 4CM method is shown as an alternative comparative reference to Modified WASP, usually less "
+"conservative, with a tendency to predict lower head losses and lower deposition."
+
+msgid "O valor deve ser maior que zero."
+msgstr "The value must be greater than zero."
+
+msgid "O índice reológico n deve estar entre 0 e 2."
+msgstr "The rheological index n must be between 0 and 2."
+
+msgid "Obrigatoriamente maior que zero."
+msgstr "Must be greater than zero."
+
+msgid "Obrigatório para fluido genérico."
+msgstr "Required for a generic fluid."
+
+msgid ""
+"Opcional. Informe o diâmetro equivalente em µm. Para distribuições estreitas (Short PSD), use "
+"D50. Para distribuições largas (Broad PSD), use preferencialmente D80, D85 ou Top Size. Critério "
+"de indicação: D80/D20 < 2,0 sugere Short PSD; D80/D20 > 2,5 sugere Broad PSD; valores "
+"intermediários ficam em zona de transição e devem ser definidos pelo usuário."
+msgstr ""
+"Optional. Enter the equivalent diameter in µm. For narrow distributions (Short PSD), use D50. For"
+" broad distributions (Broad PSD), preferably use D80, D85, or Top Size. Guidance criterion: "
+"D80/D20 < 2.0 suggests Short PSD; D80/D20 > 2.5 suggests Broad PSD; intermediate values are in a "
+"transition zone and must be defined by the user."
+
+#, python-format
+msgid "Opcional. Se vazio, o gráfico usa 200% da velocidade operacional."
+msgstr "Optional. If empty, the chart uses 200% of the operating velocity."
+
+#, python-format
+msgid "Opcional. Se vazio, o gráfico usa 200% do diâmetro operacional."
+msgstr "Optional. If empty, the chart uses 200% of the operating diameter."
+
+#, python-format
+msgid "Opcional. Se vazio, o gráfico usa 50% da velocidade operacional."
+msgstr "Optional. If empty, the chart uses 50% of the operating velocity."
+
+#, python-format
+msgid "Opcional. Se vazio, o gráfico usa 50% do diâmetro operacional."
+msgstr "Optional. If empty, the chart uses 50% of the operating diameter."
+
+msgid "Opcional. Se vazio, usa a viscosidade do fluido informada acima."
+msgstr "Optional. If blank, uses the fluid viscosity entered above."
+
+msgid "Operação"
+msgstr "Operation"
+
+msgid "Operação e tubulação"
+msgstr "Operation and pipeline"
+
+msgid "Opção 1"
+msgstr "Option 1"
+
+msgid "Opção 2"
+msgstr "Option 2"
+
+msgid "Origem"
+msgstr "Source"
+
+msgid "Os dados selecionados serão copiados diretamente para a área de transferência."
+msgstr "The selected data will be copied directly to the clipboard."
+
+msgid ""
+"PSD: use D50 quando D80/D20 < 2,0. Para D80/D20 > 2,5, avalie D80, D85 ou Top Size. Na transição,"
+" escolha tecnicamente o diâmetro equivalente."
+msgstr ""
+"PSD: use D50 when D80/D20 < 2.0. For D80/D20 > 2.5, evaluate D80, D85, or Top Size. In the "
+"transition range, select the equivalent diameter using engineering judgment."
+
+msgid "Pa"
+msgstr "Pa"
+
+msgid ""
+"Para fluidos conhecidos, o simulador usa MM, Pc, Tc, fator acêntrico e Cp Perry internos. Para "
+"fluido genérico, preencha o painel avançado abaixo."
+msgstr ""
+"For known fluids, the simulator uses internal MM, Pc, Tc, acentric factor, and Perry Cp values. "
+"For a generic fluid, fill in the advanced panel below."
+
+msgid "Para o modelo atual, a densidade dos sólidos deve ser maior que a densidade do líquido."
+msgstr "For the current model, solids density must be greater than liquid density."
+
+msgid "Para seção retangular, b deve ser maior que zero."
+msgstr "For a rectangular section, b must be greater than zero."
+
+msgid "Para seção trapezoidal, b deve ser maior que zero."
+msgstr "For a trapezoidal section, b must be greater than zero."
+
+msgid "Para seção trapezoidal, m deve ser maior que zero."
+msgstr "For a trapezoidal section, m must be greater than zero."
+
+msgid "Para seção triangular, m deve ser maior que zero."
+msgstr "For a triangular section, m must be greater than zero."
+
+msgid "Parâmetro"
+msgstr "Parameter"
+
+msgid "Parâmetro 4CM"
+msgstr "4CM parameter"
+
+msgid "Parâmetro B' da correlação do coeficiente de rigidez."
+msgstr "B' parameter in the rigidity coefficient correlation."
+
+msgid "Parâmetro crítico de Hanks"
+msgstr "Hanks critical parameter"
+
+msgid "Parâmetro crítico de Naik"
+msgstr "Naik critical parameter"
+
+msgid "Parâmetro de rigidez interno equivalente"
+msgstr "Equivalent internal consistency parameter"
+
+msgid "Parâmetro interno convertido da entrada reológica direta"
+msgstr "Internal parameter converted from direct rheological input"
+
+msgid "Parâmetros complementares — modelo de duas camadas"
+msgstr "Additional parameters — two-layer model"
+
+msgid "Parâmetros constitutivos e modelo de escoamento."
+msgstr "Constitutive parameters and flow model."
+
+msgid "Parâmetros diretos"
+msgstr "Direct parameters"
+
+msgid "Parâmetros internos equivalentes"
+msgstr "Equivalent internal parameters"
+
+msgid "Parâmetros laboratoriais (A, B e B')"
+msgstr "Laboratory parameters (A, B, and B')"
+
+msgid "Parâmetros reológicos calculados"
+msgstr "Calculated rheological parameters"
+
+msgid "Parâmetros reológicos diretos"
+msgstr "Direct rheological parameters"
+
+msgid "Passo de cálculo"
+msgstr "Calculation Step"
+
+msgid "Passo de cálculo [m]"
+msgstr "Calculation Step [m]"
+
+msgid "Passo de velocidade dos gráficos (m/s)"
+msgstr "Chart velocity step (m/s)"
+
+msgid "Pa·s / Pa·sⁿ"
+msgstr "Pa·s / Pa·sⁿ"
+
+msgid "Pc [bar(a)]"
+msgstr "Pc [bar(a)]"
+
+msgid "Perda de carga"
+msgstr "Head Loss"
+
+msgid "Perda de carga - WASP Modificado"
+msgstr "Head loss - Modified WASP"
+
+msgid "Perda de carga 4CM"
+msgstr "4MC Head Loss"
+
+msgid "Perda de carga Wasp modificado"
+msgstr "Head loss - Modified WASP"
+
+msgid "Perda de carga do modelo de duas camadas"
+msgstr "Two-layer model head loss"
+
+msgid "Perda de carga homogênea"
+msgstr "Homogeneous head loss"
+
+msgid "Perda de carga total polpa"
+msgstr "Total slurry head loss"
+
+msgid "Perda de carga veículo"
+msgstr "Carrier head loss"
+
+msgid "Perfis calculados"
+msgstr "Calculated profiles"
+
+msgid "Perry C1"
+msgstr "Perry C1"
+
+msgid "Perry C2"
+msgstr "Perry C2"
+
+msgid "Perry C3"
+msgstr "Perry C3"
+
+msgid "Perry C4"
+msgstr "Perry C4"
+
+msgid "Perry C5"
+msgstr "Perry C5"
+
+msgid "Perímetro molhado"
+msgstr "Wetted perimeter"
+
+msgid "Plástico de Bingham"
+msgstr "Bingham plastic"
+
+msgid "Pmax [bar(a)]"
+msgstr "Pmax [bar(a)]"
+
+msgid "Pmax deve ser maior que Pmin."
+msgstr "Pmax must be greater than Pmin."
+
+msgid "Pmin [bar(a)]"
+msgstr "Pmin [bar(a)]"
+
+msgid "Polpa e granulometria"
+msgstr "Slurry and particle size distribution"
+
+msgid "Polpa e partículas"
+msgstr "Slurry and particles"
+
+msgid "Pontos calculados ao longo da tubulação"
+msgstr "Calculated Points Along the Pipeline"
+
+msgid "Pontos de elevação"
+msgstr "Elevation points"
+
+msgid "Pontos omitidos"
+msgstr "Omitted Points"
+
+msgid "Pontos totais"
+msgstr "Total Points"
+
+msgid "Pontos válidos"
+msgstr "Valid Points"
+
+msgid "Power Law"
+msgstr "Power Law"
+
+msgid "Preenchimento"
+msgstr "Filling"
+
+msgid "Preenchimento da seção"
+msgstr "Section filling"
+
+#, python-format
+msgid "Preenchimento da seção avaliado como %(status)s."
+msgstr "Section filling evaluated as %(status)s."
+
+msgid "Pressão [bar(a)]"
+msgstr "Pressure [bar(a)]"
+
+msgid "Pressão absoluta de entrada"
+msgstr "Inlet Absolute Pressure"
+
+msgid "Pressão crítica absoluta"
+msgstr "Absolute critical pressure"
+
+msgid "Pressão de saída"
+msgstr "Outlet pressure"
+
+msgid "Pressão e temperatura ao longo da linha"
+msgstr "Pressure and Temperature Along the Pipeline"
+
+msgid "Pressão inicial [bar(a)]"
+msgstr "Initial pressure [bar(a)]"
+
+msgid "Propriedades das fases e distribuição dos sólidos."
+msgstr "Phase properties and solids distribution."
+
+msgid "Propriedades das fases, concentração e diâmetro equivalente de deposição."
+msgstr "Phase properties, concentration, and equivalent deposition diameter."
+
+msgid "Propriedades das fases, concentração e granulometria de referência."
+msgstr "Phase properties, concentration, and reference particle size distribution."
+
+msgid "Propriedades termodinâmicas"
+msgstr "Thermodynamic Properties"
+
+msgid "Pseudo-homogêneo"
+msgstr "Pseudo-homogeneous"
+
+msgid "Q - Vazão requerida [m³/h]"
+msgstr "Q - Required flow rate [m³/h]"
+
+msgid ""
+"Quantidade de pontos no perfil vertical y/D. Mais pontos deixam o perfil mais suave e aumentam o "
+"tempo de cálculo."
+msgstr ""
+"Number of points in the vertical y/D profile. More points produce a smoother profile and increase"
+" calculation time."
+
+msgid "Queda de pressão"
+msgstr "Pressure drop"
+
+msgid "Raio hidráulico"
+msgstr "Hydraulic radius"
+
+msgid "Razão volumétrica de sólidos"
+msgstr "Solids volumetric ratio"
+
+msgid "Recalcular homogêneo"
+msgstr "Recalculate homogeneous"
+
+msgid "Recalcule considerando o comportamento reológico selecionado."
+msgstr "Recalculate using the selected rheological behavior."
+
+msgid "Recortar outliers"
+msgstr "Clip outliers"
+
+msgid "Referência comparativa 4CM"
+msgstr "4CM comparative reference"
+
+msgid "Referência em coluna de água"
+msgstr "Reference in water head"
+
+msgid "Referência reológica a 20 °C"
+msgstr "Rheological reference at 20 °C"
+
+msgid "Regime de rugosidade adotado"
+msgstr "Adopted roughness regime"
+
+msgid "Regime estimado"
+msgstr "Estimated regime"
+
+msgid "Regime laminar/turbulento"
+msgstr "Laminar/turbulent regime"
+
+msgid "Regime:"
+msgstr "Regime:"
+
+msgid "Relação horizontal/vertical do talude."
+msgstr "Horizontal-to-vertical side-slope ratio."
+
+msgid "Reologia"
+msgstr "Rheology"
+
+msgid "Restaurar padrão"
+msgstr "Restore defaults"
+
+msgid "Resultado"
+msgstr "Result"
+
+msgid "Resultado - Simulador de Gases"
+msgstr "Result - Gas Simulator"
+
+#, python-format
+msgid "Resultado calculado, mas não foi possível salvar o histórico da simulação: %(erro)s"
+msgstr "The result was calculated, but the simulation history could not be saved: %(erro)s"
+
+msgid "Resultado da simulação"
+msgstr "Simulation result"
+
+msgid "Resultado do simulador de gases"
+msgstr "Gas simulator result"
+
+msgid "Resultado na velocidade operacional"
+msgstr "Result at operating velocity"
+
+msgid "Resultados completos compilados para o cenário analisado."
+msgstr "Complete results compiled for the analyzed scenario."
+
+msgid "Resultados detalhados"
+msgstr "Detailed results"
+
+msgid "Resultados devem ser avaliados com critério de engenharia."
+msgstr "Results must be evaluated using engineering judgment."
+
+msgid "Resumo da malha usada na última simulação."
+msgstr "Summary of the grid used in the latest simulation."
+
+msgid "Retangular"
+msgstr "Rectangular"
+
+msgid "Revise os campos destacados antes de calcular."
+msgstr "Review the highlighted fields before calculating."
+
+msgid "Reynolds crítico de Durand"
+msgstr "Durand critical Reynolds number"
+
+msgid "Reynolds crítico de Hanks"
+msgstr "Hanks critical Reynolds number"
+
+msgid "Reynolds crítico de Naik"
+msgstr "Naik critical Reynolds number"
+
+msgid "Reynolds crítico de referência"
+msgstr "Reference critical Reynolds number"
+
+msgid "Reynolds de transição Power Law"
+msgstr "Power Law transition Reynolds number"
+
+msgid "Reynolds do tubo"
+msgstr "Pipe Reynolds Number"
+
+msgid "Reynolds e atrito"
+msgstr "Reynolds and friction"
+
+msgid "Reynolds generalizado Herschel-Bulkley"
+msgstr "Herschel-Bulkley generalized Reynolds number"
+
+msgid "Reynolds, fator Darcy e Mach"
+msgstr "Reynolds, Darcy Factor, and Mach"
+
+msgid "Rugosidade [m]"
+msgstr "Roughness [m]"
+
+msgid "Rugosidade absoluta"
+msgstr "Absolute roughness"
+
+msgid "Rugosidade relativa hidráulica"
+msgstr "Hydraulic relative roughness"
+
+msgid "S - Inclinação [%]"
+msgstr "S - Slope [%]"
+
+msgid "Sair"
+msgstr "Sign out"
+
+msgid "Seguir heterogêneo"
+msgstr "Continue heterogeneous"
+
+msgid "Selecionar gráfico"
+msgstr "Select chart"
+
+msgid "Selecionar modelo"
+msgstr "Select model"
+
+msgid "Selecione a geometria da descida despressurizada."
+msgstr "Select the gravity-flow section geometry."
+
+msgid "Selecione o engine Python utilizado nesta execução."
+msgstr "Select the Python engine used for this run."
+
+msgid "Selecione uma série para copiar os dados tabulados."
+msgstr "Select a series to copy the tabulated data."
+
+msgid "Seleção do critério Thomas, velocidade terminal, inclinação e parâmetros de leito."
+msgstr "Selection of the Thomas criterion, terminal velocity, inclination, and bed parameters."
+
+msgid "Seleção do gás e propriedades críticas para gases conhecidos ou genéricos."
+msgstr "Gas selection and critical properties for known or generic gases."
+
+msgid "Semi-log"
+msgstr "Semi-log"
+
+msgid "Seção transversal - modelo de duas camadas"
+msgstr "Cross-section - two-layer model"
+
+msgid "Simulador de Deposição"
+msgstr "Deposition Simulator"
+
+msgid "Simulador de Escoamento por Gravidade"
+msgstr "Gravity Flow Simulator"
+
+msgid "Simulador de Gases"
+msgstr "Gas Simulator"
+
+msgid "Simulador de Polpa"
+msgstr "Slurry Simulator"
+
+msgid "Simulador técnico de hidráulica de polpas"
+msgstr "Technical slurry hydraulics simulator"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Status de saturação"
+msgstr "Saturation status"
+
+msgid "Subcamada viscosa"
+msgstr "Viscous Sublayer"
+
+msgid "Superaquecimento mínimo [K]"
+msgstr "Minimum superheat [K]"
+
+msgid "Superfície lisa"
+msgstr "Smooth Surface"
+
+msgid "Superfície rugosa"
+msgstr "Rough Surface"
+
+msgid "Símbolo"
+msgstr "Symbol"
+
+msgid "Sólidos suspensos / sólidos totais"
+msgstr "Suspended solids / total solids"
+
+msgid "Tabela de resultados"
+msgstr "Result Table"
+
+msgid "Taludes verticais definidos automaticamente."
+msgstr "Vertical side slopes defined automatically."
+
+msgid "Tc [°C]"
+msgstr "Tc [°C]"
+
+msgid "Tc deve ser maior que o zero absoluto."
+msgstr "Tc must be above absolute zero."
+
+msgid "Temperatura [K]"
+msgstr "Temperature [K]"
+
+msgid "Temperatura crítica"
+msgstr "supercritical temperature"
+
+msgid "Temperatura de entrada"
+msgstr "Inlet Temperature"
+
+msgid "Temperatura de referência da viscosidade"
+msgstr "Viscosity Reference Temperature"
+
+msgid "Temperatura de saída"
+msgstr "Outlet Temperature"
+
+msgid "Temperatura inicial [°C]"
+msgstr "Initial temperature [°C]"
+
+msgid "Tensão de Escoamento"
+msgstr "Yield stress"
+
+msgid "Tensão de Escoamento veículo"
+msgstr "Carrier yield stress"
+
+msgid "Tensão de escoamento"
+msgstr "Yield stress"
+
+msgid "Tensão de escoamento laboratorial"
+msgstr "Laboratory yield stress"
+
+msgid "Termodinâmica"
+msgstr "Thermodynamics"
+
+msgid "Tipo de concentração"
+msgstr "Concentration type"
+
+msgid "Tipo de concentração inválido."
+msgstr "Invalid concentration type."
+
+msgid "Tipo de entrada reológica"
+msgstr "Rheological input type"
+
+msgid "Tipo de entrada reológica [-]"
+msgstr "Rheological input type"
+
+msgid "Tipo de f"
+msgstr "f type"
+
+msgid "Tipo de fluido homogêneo"
+msgstr "Homogeneous fluid type"
+
+msgid "Tmax [°C]"
+msgstr "Tmax [°C]"
+
+msgid "Tmax deve ser maior que Tmin."
+msgstr "Tmax must be greater than Tmin."
+
+msgid "Tmin [°C]"
+msgstr "Tmin [°C]"
+
+msgid "Todos os diâmetros granulométricos devem ser maiores que zero."
+msgstr "All particle diameters must be greater than zero."
+
+msgid "Tolerância de convergência do acoplamento β/f. Valores menores exigem mais iterações."
+msgstr "β/f coupling convergence tolerance. Lower values require more iterations."
+
+msgid "Trapezoidal"
+msgstr "Trapezoidal"
+
+msgid "Triangular"
+msgstr "Triangular"
+
+msgid "Tubular"
+msgstr "Pipe"
+
+msgid "Tubular parcialmente cheia"
+msgstr "Partially Filled Pipe"
+
+msgid "Tubulação"
+msgstr "Pipeline"
+
+msgid "Turbulento:"
+msgstr "turbulent"
+
+msgid "U - Velocidade média (m/s)"
+msgstr "U - Mean velocity (m/s)"
+
+msgid "U final deve ser maior ou igual a U inicial."
+msgstr "Final U must be greater than or equal to initial U."
+
+msgid "U final dos gráficos (m/s)"
+msgstr "Final chart U (m/s)"
+
+msgid "U inicial dos gráficos (m/s)"
+msgstr "Initial chart U (m/s)"
+
+msgid "U passo deve ser maior que zero."
+msgstr "U step must be greater than zero."
+
+msgid "Unidade"
+msgstr "Unit"
+
+msgid "Unidade de D"
+msgstr "τ₀ unit"
+
+msgid "Unidade de b"
+msgstr "K unit"
+
+msgid "Unidade de comprimento inválida."
+msgstr "Invalid diameter unit."
+
+msgid "Unidade de diâmetro inválida."
+msgstr "Invalid diameter unit."
+
+msgid "Unidade de hmax"
+msgstr "hmax unit"
+
+msgid "Unidade de rugosidade inválida."
+msgstr "Invalid roughness unit."
+
+msgid "Unidade de tensão de escoamento inválida."
+msgstr "Invalid yield-stress unit."
+
+msgid "Unidade de ε"
+msgstr "ε unit"
+
+msgid "Unidade de η"
+msgstr "η unit"
+
+msgid "Unidade de η ou K"
+msgstr "η or K unit"
+
+msgid "Unidade de τ₀"
+msgstr "τ₀ unit"
+
+msgid "Unidade do DI"
+msgstr "ID unit"
+
+msgid "Unidade do coeficiente de rigidez inválida."
+msgstr "Invalid rheological coefficient unit."
+
+msgid "Unidade do coeficiente reológico inválida."
+msgstr "Invalid rheological coefficient unit."
+
+msgid "Usada em Bingham e Herschel-Bulkley. Para Power Law, a tensão de escoamento interna será zero."
+msgstr "Used for Bingham and Herschel-Bulkley. For Power Law, the internal yield stress will be zero."
+
+msgid "Usado em η ou K = 10^((φ/(1-φ))·B'), com η/K em cP antes do ajuste pela viscosidade do fluido."
+msgstr "Used in η or K = 10^((φ/(1-φ))·B'), with η/K in cP before the fluid-viscosity adjustment."
+
+msgid "Usado em τ0 = A·φ^B, com τ0 em dyn/cm² antes da conversão para Pa."
+msgstr "Used in τ0 = A·φ^B, with τ0 in dyn/cm² before conversion to Pa."
+
+msgid "Usado somente quando d12 estiver em modo manual/debug."
+msgstr "Used only when d12 is in manual/debug mode."
+
+msgid "Use automático pela granulometria. Manual apenas para debug."
+msgstr "Use automatic from the particle size distribution. Manual is only for debug."
+
+msgid "Use suas credenciais para continuar."
+msgstr "Use your credentials to continue."
+
+msgid "Valor"
+msgstr "Value"
+
+msgid "Valor de η de referência. O motor mantém o ajuste pela viscosidade do líquido carreador."
+msgstr "Reference η value. The engine retains the adjustment based on carrier-liquid viscosity."
+
+msgid "Valor direto da tensão de escoamento na condição informada."
+msgstr "Direct yield-stress value at the specified condition."
+
+#, python-format
+msgid "Valor inválido em %(nome)s: %(valor)s"
+msgstr "Invalid value in %(nome)s: %(valor)s"
+
+msgid "Valor típico 0,50 para areia/cascalho/minerais; 0,40 pode ser usado para alguns carvões."
+msgstr "Typical value 0.50 for sand/gravel/minerals; 0.40 may be used for some coals."
+
+msgid "Valores detalhados do cenário analisado."
+msgstr "Detailed values for the analyzed scenario."
+
+msgid "Valores obtidos de A, B e B' para a fração volumétrica informada."
+msgstr "Values obtained from A, B and B' for the entered volumetric fraction."
+
+msgid "Variação de elevação"
+msgstr "Elevation Change"
+
+msgid "Vazão"
+msgstr "Flow rate"
+
+msgid "Vazão calculada"
+msgstr "Calculated flow rate"
+
+msgid "Vazão mássica"
+msgstr "Mass Flow Rate"
+
+msgid "Vazão mássica [kg/h]"
+msgstr "Mass flow rate [kg/h]"
+
+msgid "Vazão que a seção deve transportar."
+msgstr "Flow rate that the section must convey."
+
+msgid "Vazão volumétrica [m³/h]"
+msgstr "Volumetric Flow Rate [m³/h]"
+
+msgid "Velocidade"
+msgstr "Velocity"
+
+msgid "Velocidade Green/Abulnaga antes do fator 2"
+msgstr "Green/Abulnaga velocity before factor 2"
+
+msgid "Velocidade [m/s]"
+msgstr "Velocity [m/s]"
+
+msgid "Velocidade camada inferior"
+msgstr "Lower-layer velocity"
+
+msgid "Velocidade camada superior"
+msgstr "Upper-layer velocity"
+
+msgid "Velocidade característica V50,h"
+msgstr "Characteristic Velocity V50,h"
+
+msgid ""
+"Velocidade característica da fração heterogênea, calculada a partir do D50 dessa fração. É "
+"utilizada pelo modelo 4CM para estimar a contribuição da parcela heterogênea na perda de carga. "
+"Não representa velocidade de deposição nem velocidade de suspensão completa."
+msgstr ""
+"Characteristic velocity of the heterogeneous fraction, calculated from the D50 of that fraction. "
+"It is used by the 4CM model to estimate the heterogeneous contribution to head loss. It is "
+"neither a deposition velocity nor a complete suspension velocity."
+
+msgid "Velocidade crítica Bingham 1"
+msgstr "Bingham critical velocity 1"
+
+msgid "Velocidade crítica Bingham 2"
+msgstr "Bingham critical velocity 2"
+
+msgid "Velocidade crítica Power Law"
+msgstr "Power Law critical velocity"
+
+msgid "Velocidade crítica de deposição"
+msgstr "Critical Deposition Velocity"
+
+msgid ""
+"Velocidade crítica de deposição estimada pelo modelo selecionado. Representa a velocidade mínima "
+"recomendada para evitar deposição estacionária nas condições especificadas."
+msgstr ""
+"Critical deposition velocity estimated by the selected model. It represents the minimum "
+"recommended velocity to avoid stationary deposition under the specified conditions."
+
+msgid "Velocidade de deposição"
+msgstr "Deposition Velocity"
+
+msgid ""
+"Velocidade de deposição (Limit of Stationary Deposit) utilizada pelo modelo de Wilson. Acima "
+"desta velocidade o material permanece em movimento, podendo ainda existir leito móvel. Não "
+"corresponde necessariamente à suspensão completa das partículas."
+msgstr ""
+"Deposition velocity used by the Wilson model. Above this velocity the material remains in motion,"
+" although a moving bed may still exist. It does not necessarily correspond to complete particle "
+"suspension."
+
+msgid "Velocidade de deposição - Limit of Stationary Deposit"
+msgstr "Deposition Velocity - Limit of Stationary Deposit"
+
+msgid ""
+"Velocidade de deposição utilizada pelo modelo de Wilson. Acima desta velocidade o material "
+"permanece em movimento, podendo ainda existir leito móvel. Não corresponde necessariamente à "
+"suspensão completa das partículas."
+msgstr ""
+"Deposition velocity used by the Wilson model. Above this velocity the material remains in motion,"
+" although a moving bed may still exist. It does not necessarily correspond to complete particle "
+"suspension."
+
+msgid "Velocidade de suspensão completa V100,s"
+msgstr "Complete Suspension Velocity V100,s"
+
+msgid "Velocidade do som [m/s]"
+msgstr "Speed of Sound [m/s]"
+
+msgid ""
+"Velocidade estimada para suspensão completa da fração estratificada. Acima desta velocidade, o "
+"modelo considera que a camada estratificada desaparece e toda essa fração passa a ser "
+"transportada em suspensão."
+msgstr ""
+"Estimated velocity for complete suspension of the stratified fraction. Above this velocity, the "
+"model considers that the stratified layer disappears and all this fraction is transported in "
+"suspension."
+
+msgid "Velocidade final usada para gerar as curvas. Deve ser maior ou igual à inicial."
+msgstr ""
+"Final velocity used to generate the curves. It must be greater than or equal to the initial "
+"velocity."
+
+msgid "Velocidade inicial usada para gerar as curvas dos gráficos."
+msgstr "Initial velocity used to generate the chart curves."
+
+msgid "Velocidade máxima do gráfico"
+msgstr "Maximum chart velocity"
+
+msgid "Velocidade média"
+msgstr "Mean velocity"
+
+msgid "Velocidade mínima - Abulnaga 1"
+msgstr "Minimum velocity - Abulnaga 1"
+
+msgid "Velocidade mínima - Green/Abulnaga"
+msgstr "Minimum velocity - Green/Abulnaga"
+
+msgid "Velocidade mínima da parcela estratificada"
+msgstr "Minimum stratified-fraction velocity"
+
+msgid "Velocidade mínima da parcela heterogênea"
+msgstr "Minimum heterogeneous-fraction velocity"
+
+msgid "Velocidade mínima de referência"
+msgstr "Reference minimum velocity"
+
+msgid "Velocidade mínima do gráfico"
+msgstr "Minimum chart velocity"
+
+msgid ""
+"Velocidade mínima para evitar a deposição estacionária da fração heterogênea. Acima desta "
+"velocidade, essa fração permanece em movimento, podendo ainda existir leito móvel. Não representa"
+" suspensão completa."
+msgstr ""
+"Minimum velocity to avoid stationary deposition of the heterogeneous fraction. Above this "
+"velocity, this fraction remains in motion, although a moving bed may still exist. It does not "
+"represent complete suspension."
+
+msgid "Velocidade operacional média da polpa na tubulação, em m/s."
+msgstr "Mean slurry operating velocity in the pipeline, in m/s."
+
+msgid "Velocidade para superfície lisa"
+msgstr "Velocity for a smooth surface"
+
+msgid "Velocidade para superfície rugosa"
+msgstr "Velocity for a rough surface"
+
+msgid "Velocidade terminal Stokes"
+msgstr "Stokes Terminal Velocity"
+
+msgid "Velocidade terminal Turton-Levenspiel"
+msgstr "Turton-Levenspiel Terminal Velocity"
+
+msgid "Ver cache"
+msgstr "View cache"
+
+msgid "Ver diagnóstico do modelo de duas camadas"
+msgstr "View two-layer model diagnostics"
+
+msgid "Versão"
+msgstr "Version"
+
+msgid "Viscosidade Efetiva Polpa"
+msgstr "Effective slurry viscosity"
+
+msgid "Viscosidade Efetiva Veículo"
+msgstr "Effective carrier viscosity"
+
+msgid "Viscosidade de referência"
+msgstr "Reference Viscosity"
+
+msgid "Viscosidade dinâmica"
+msgstr "Dynamic Viscosity"
+
+msgid "Viscosidade dinâmica [Pa·s]"
+msgstr "Dynamic viscosity [Pa·s]"
+
+msgid "Viscosidade dinâmica do fluido em cP. Exemplo: água a 20 °C ≈ 1,002 cP."
+msgstr "Fluid dynamic viscosity in cP. Example: water at 20 °C ≈ 1.002 cP."
+
+msgid "Viscosidade dinâmica do líquido carreador."
+msgstr "Dynamic viscosity of the carrier liquid."
+
+msgid "Visualização técnica"
+msgstr "Technical visualization"
+
+msgid "Voltar ao resultado"
+msgstr "Back to result"
+
+msgid "Voltar ao simulador"
+msgstr "Back to simulator"
+
+msgid "WASP Modificado"
+msgstr "Modified WASP"
+
+msgid "WASP Modificado x 4CM"
+msgstr "Modified WASP x 4MC"
+
+msgid "Xh = 0: parcela heterogênea ignorada; d50h/V50h/Vsm,h ficam N/A."
+msgstr "Xh = 0: heterogeneous fraction ignored; d50h/V50h/Vsm,h are N/A."
+
+msgid "Xp = 0: parcela pseudo-homogenea ignorada."
+msgstr "Xp = 0: pseudo-homogeneous fraction ignored."
+
+msgid "Xs = 0: parcela estratificada ignorada; V100,s permanece diagnóstico."
+msgstr "Xs = 0: stratified fraction ignored; V100,s remains diagnostic."
+
+msgid "Z max Mollier [-]"
+msgstr "Z max Mollier [-]"
+
+msgid "Z médio"
+msgstr "Average Z"
+
+msgid "acoplamento Wasp modificado"
+msgstr "Modified WASP coupling"
+
+msgid "adequado"
+msgstr "adequate"
+
+msgid "ajustado pelo fluido"
+msgstr "fluid-adjusted"
+
+msgid "b - Base inferior"
+msgstr "b - Bottom base"
+
+msgid "cP / cP·sⁿ"
+msgstr "cP / cP·sⁿ"
+
+msgid "camada inferior"
+msgstr "lower layer"
+
+msgid "camada superior"
+msgstr "upper layer"
+
+msgid "d12 - Interface hipotética"
+msgstr "d12 - Hypothetical interface"
+
+msgid "d12 calculado/usado"
+msgstr "Calculated/used d12"
+
+msgid "d12 manual/debug (µm)"
+msgstr "Manual/debug d12 (µm)"
+
+msgid "d50 da parcela estratificada"
+msgstr "d50 of the stratified fraction"
+
+msgid "d50 da parcela heterogênea"
+msgstr "Heterogeneous-fraction d50"
+
+msgid "d50 dos grossos +74 µm"
+msgstr "d50 of coarse particles +74 µm"
+
+msgid "d85 - Percentil passante [mm]"
+msgstr "d85 - Passing percentile [mm]"
+
+msgid "desconhecido"
+msgstr "unknown"
+
+msgid "dinamico"
+msgstr "dynamic"
+
+msgid "dp - Maior partícula [mm]"
+msgstr "dp - Largest Particle [mm]"
+
+msgid "dyn/cm²"
+msgstr "dyn/cm²"
+
+msgid "dᵢ - Diâmetros das partículas (µm)"
+msgstr "dᵢ - Particle diameters (µm)"
+
+msgid "equivalente utilizado no cálculo"
+msgstr "equivalent used in the calculation"
+
+msgid "filtro físico/numérico"
+msgstr "physical/numerical filter"
+
+msgid "ft"
+msgstr "ft"
+
+msgid "heterogéneo"
+msgstr "Heterogeneous"
+
+msgid "heterogêneo"
+msgstr "heterogeneous"
+
+msgid "hmax - Altura disponível"
+msgstr "hmax - Available Height"
+
+msgid "homogéneo"
+msgstr "homogeneous"
+
+msgid "homogêneo"
+msgstr "homogeneous"
+
+msgid "inadequado"
+msgstr "inadequate"
+
+msgid "indisponível"
+msgstr "unavailable"
+
+msgid "interface"
+msgstr "interface"
+
+msgid "kPa"
+msgstr "kPa"
+
+msgid "leito móvel"
+msgstr "moving bed"
+
+msgid "liso"
+msgstr "smooth"
+
+msgid "m"
+msgstr "m"
+
+msgid "m - Talude lateral [-]"
+msgstr "m - Side slope [-]"
+
+msgid "m coluna de polpa/km"
+msgstr "m slurry head/km"
+
+msgid "m polpa/km"
+msgstr "m slurry/km"
+
+msgid "m polpa/m"
+msgstr "m slurry/m"
+
+msgid "mPa·s / mPa·sⁿ"
+msgstr "mPa·s / mPa·sⁿ"
+
+msgid "malha"
+msgstr "grid"
+
+msgid "mm"
+msgstr "mm"
+
+msgid "mássica"
+msgstr "by mass"
+
+msgid "n - Fator de potência da reologia"
+msgstr "n - Rheology power index"
+
+msgid "plotados"
+msgstr "plotted"
+
+msgid "pol"
+msgstr "pol"
+
+msgid "possível mudança de fase"
+msgstr "possible phase change"
+
+msgid "próximo da saturação"
+msgstr "near saturation"
+
+msgid "referência 20 °C"
+msgstr "20 °C reference"
+
+msgid "rugoso"
+msgstr "rough"
+
+msgid "suspensão"
+msgstr "suspension"
+
+msgid "suspensão completa da fração estratificada"
+msgstr "complete suspension of the stratified fraction"
+
+msgid "temperatura supercrítica"
+msgstr "supercritical temperature"
+
+msgid "vapor superaquecido"
+msgstr "superheated vapor"
+
+msgid "volumétrica total"
+msgstr "total volumetric"
+
+msgid "y/D máximo"
+msgstr "Maximum y/D"
+
+msgid "y/D mínimo"
+msgstr "Minimum y/D"
+
+msgid "µf - Viscosidade da fase fina (cP)"
+msgstr "µf - Fine-phase viscosity (cP)"
+
+msgid "µm"
+msgstr "µm"
+
+msgid "µₗ - Viscosidade do fluido (cP)"
+msgstr "µₗ - Fluid viscosity (cP)"
+
+msgid "Área molhada"
+msgstr "Flow area"
+
+msgid "Ângulo molhado da seção tubular"
+msgstr "Wetted angle of the tubular section"
+
+msgid "Índice de comportamento do fluido para modelos Power Law ou Herschel-Bulkley."
+msgstr "Fluid behavior index for Power Law or Herschel-Bulkley models."
+
+msgid "ε - Rugosidade absoluta"
+msgstr "ε - Absolute roughness"
+
+msgid "η - Coeficiente de rigidez direto"
+msgstr "η - Direct consistency coefficient"
+
+msgid "η ou K - Coeficiente reológico direto"
+msgstr "η or K - Direct rheological coefficient"
+
+msgid "η/K ajustado"
+msgstr "adjusted"
+
+msgid "η/K ref. 20 °C"
+msgstr "η/K ref. 20 °C"
+
+msgid "ηs - Atrito sólido-parede"
+msgstr "ηs - Solid-wall friction"
+
+msgid "μₗ - Viscosidade do líquido [cP]"
+msgstr "µₗ - Fluid viscosity (cP)"
+
+msgid "ρₗ - Densidade do fluido (kg/m³)"
+msgstr "ρₗ - Fluid density (kg/m³)"
+
+msgid "ρₗ - Densidade do líquido [kg/m³]"
+msgstr "ρₗ - Fluid density (kg/m³)"
+
+msgid "ρₛ - Densidade das partículas (kg/m³)"
+msgstr "ρₛ - Particle density (kg/m³)"
+
+msgid "ρₛ - Densidade dos sólidos [kg/m³]"
+msgstr "True solids density in kg/m³."
+
+msgid "τ₀ - Tensão de escoamento direta"
+msgstr "τ₀ - Direct yield stress"
+
+msgid "φ em fração volumétrica; τ₀ em dyn/cm² e η/K em cP antes dos ajustes do modelo."
+msgstr "φ as a volume fraction; τ₀ in dyn/cm² and η/K in cP before model adjustments."
+
+msgid "φV - Concentração volumétrica"
+msgstr "Volumetric concentration"
+
+msgid "φw - Concentração mássica [%]"
+msgstr "Cw - Mass concentration"
+
+msgid "φᵢ - Proporções relativas das partículas (%)"
+msgstr "φᵢ - Relative particle proportions (%)"
+
+msgid "VSCALC+ calculado integralmente no backend Python a partir das equacoes do prototipo."
+msgstr "VSCALC+ was calculated entirely in the Python backend from the prototype equations."
+
+msgid ""
+"Criterio Thomas por subcamada viscosa ativo; y+ usado apenas como criterio "
+"alternativo/diagnostico."
+msgstr ""
+"Thomas criterion based on the viscous sublayer is active; y+ is used only as an alternative "
+"diagnostic criterion."
+
+msgid "Modelo homogêneo selecionado (Plástico de Bingham)."
+msgstr "Homogeneous model selected (Bingham plastic)."
+
+msgid "Modelo homogêneo selecionado (Herschel-Bulkley)."
+msgstr "Homogeneous model selected (Herschel-Bulkley)."
+
+msgid "Modelo homogêneo selecionado (Power Law)."
+msgstr "Homogeneous model selected (Power Law)."
+
+msgid ""
+"A perda de carga calculada para a polpa ficou abaixo da perda de carga da água em parte da faixa "
+"do gráfico. Esse comportamento não é usualmente observado em campo; avalie os parâmetros e "
+"utilize o resultado com cautela."
+msgstr ""
+"The calculated slurry head loss was below the water head loss over part of the chart range. This "
+"behavior is not commonly observed in the field; review the parameters and use the result with "
+"caution."
+
+msgid "Fator de atrito Fanning operacional"
+msgstr "Operating Fanning friction factor"
+
+msgid "Fator de atrito Fanning final"
+msgstr "Final Fanning friction factor"
+
+msgid "Compressibilidade isentropica nao positiva."
+msgstr "Non-positive isentropic compressibility."
+
+msgid "Estado termodinamico invalido: Cv ou beta_T nao positivo."
+msgstr "Invalid thermodynamic state: Cv or beta_T is not positive."
+
+msgid "Faixa P-T invalida para a malha Mollier."
+msgstr "Invalid P-T range for the Mollier grid."
+
+msgid "Fluido conhecido invalido."
+msgstr "Invalid known fluid."
+
+msgid "Modelo termico invalido."
+msgstr "Invalid thermal model."
+
+msgid "Peng-Robinson não encontrou raiz real para Z."
+msgstr "Peng-Robinson did not find a real root for Z."
+
+msgid "Pressão absoluta e temperatura devem ser maiores que zero."
+msgstr "Absolute pressure and temperature must be greater than zero."
+
+msgid "Pressão absoluta e temperatura devem ser positivas."
+msgstr "Absolute pressure and temperature must be positive."
+
+msgid "Pressão ficou negativa ou zero. Reduza dx ou revise dados."
+msgstr "Pressure became negative or zero. Reduce dx or review the inputs."
+
+msgid "Reynolds inválido."
+msgstr "Invalid Reynolds number."
+
+msgid "Coeficiente de fluido tipo Power Law"
+msgstr "Power Law fluid consistency coefficient"
+
+msgid "Coeficiente de fluido tipo Herschel-Bulkley"
+msgstr "Herschel-Bulkley fluid consistency coefficient"
+
+msgid "Adiabático"
+msgstr "Adiabatic"
+
+msgid "Adiabático:"
+msgstr "Adiabatic:"
+
+msgid "Fator de atrito: Darcy."
+msgstr "Friction factor: Darcy."
+
+msgid "Nota"
+msgstr "Note:"
+
+msgid "O modelo de duas camadas não convergiu para as condições operacionais especificadas."
+msgstr "The Two-Layer Model did not converge for the specified operating conditions."
+
+msgid "Avaliação da Polpa"
+msgstr "Slurry Evaluation"
+
+msgid ""
+"Simulação do escoamento de polpas em tubulações pressurizadas (condutos forçados), incluindo "
+"avaliação hidráulica e comportamento do escoamento."
+msgstr ""
+"Simulation of slurry flow in pressurized pipelines (closed conduits), including hydraulic "
+"performance and flow behavior evaluation."
+
+msgid "Avaliação de Gás Compressível"
+msgstr "Compressible Gas Evaluation"
+
+msgid ""
+"Simulação do escoamento de gases reais compressíveis em tubulações pressurizadas, incluindo "
+"avaliação das propriedades termodinâmicas e hidráulicas."
+msgstr ""
+"Simulation of real compressible gas flow in pressurized pipelines, including thermodynamic and "
+"hydraulic performance evaluation."
+
+msgid "Avaliação de Escoamento Livre"
+msgstr "Free Flow Evaluation"
+
+msgid ""
+"Simulação do escoamento por gravidade em condutos livres, avaliando diferentes geometrias de "
+"seção e condições hidráulicas."
+msgstr ""
+"Simulation of gravity-driven flow in open channels, evaluating different cross-section geometries"
+" and hydraulic conditions."
+
+msgid ""
+"Avaliação da velocidade mínima de suspensão e deposição de sólidos em escoamentos de polpas em "
+"tubulações pressurizadas."
+msgstr ""
+"Evaluation of the minimum suspension and deposition velocities of solids in slurry flow through "
+"pressurized pipelines."
+

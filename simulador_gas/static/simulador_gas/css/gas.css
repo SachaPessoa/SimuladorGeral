@@ -1,0 +1,9 @@
+.gas-heading strong { color: var(--accent-dark); }
+.gas-fluid-summary { display: grid; align-content: center; padding: 14px; border: 1px solid #b7d7e2; border-radius: 10px; background: var(--accent-soft); color: var(--accent-dark); font-size: 12px; font-weight: 700; }
+.gas-advanced-field { background: #f8fbfc; }
+.gas-summary { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.gas-charts .chart { min-height: 600px; }
+.gas-mollier-chart { grid-column: 1 / -1; min-height: 760px; }
+.gas-detail-table { min-width: 1900px; font-size: 12px; }
+.gas-memory { display: grid; gap: 14px; }
+.gas-memory p { padding: 12px; border: 1px solid var(--line); border-radius: 10px; background: #fbfdfe; color: var(--text); font-size: 15px; }
